@@ -77,7 +77,7 @@ export default function FloatingSocials() {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-      className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3"
+      className="fixed left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 sm:gap-3 scale-90 sm:scale-100 origin-left"
     >
       <div className="bg-[#0a0514]/80 backdrop-blur-md border border-white/10 p-2 rounded-full shadow-2xl flex flex-col gap-3 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-20 before:pointer-events-none">
         {socials.map((social) => (
