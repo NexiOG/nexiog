@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Loader from "@/components/ui/Loader";
 import Chatbot from "@/components/Chatbot";
+import FloatingSocials from "@/components/FloatingSocials";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -97,6 +98,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingSocials />
           <Chatbot />
         </TRPCProvider>
       </body>
