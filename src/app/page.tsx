@@ -78,7 +78,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[clamp(2.5rem,8vw,8rem)] font-extrabold leading-[1.1] mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-[#a855f7]"
+              className="text-[clamp(2.5rem,8vw,8rem)] font-extrabold leading-[1.1] mb-6 tracking-tighter text-white drop-shadow-2xl"
             >
               We Engineer the Tech. You<br className="hidden sm:block" /> Capture the Market
             </MotionH1>

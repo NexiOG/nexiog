@@ -84,15 +84,15 @@ export default function TestimonialsSection() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
-            onTouchEnd={() => setIsHovered(false)}
-            className="flex overflow-x-auto gap-8 px-6 pb-12 snap-x snap-mandatory no-scrollbar w-full relative z-10 cursor-grab active:cursor-grabbing"
+            onTouchEnd={() => setTimeout(() => setIsHovered(false), 1500)}
+            className="flex overflow-x-auto gap-8 px-6 pb-12 no-scrollbar w-full relative z-10 cursor-grab active:cursor-grabbing"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {/* Render 3 times for seamless infinite loop */}
             {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((item, index) => (
               <div 
                 key={`${item.id}-${index}`}
-                className="flex-shrink-0 w-[320px] md:w-[400px] snap-center bg-gradient-to-br from-[#180d2b]/80 to-[#11091e]/90 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-[2rem] shadow-[0_0_40px_rgba(129,74,200,0.1)] hover:border-[#e34a2e]/40 transition-colors"
+                className="flex-shrink-0 w-[320px] md:w-[400px] bg-gradient-to-br from-[#180d2b]/80 to-[#11091e]/90 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-[2rem] shadow-[0_0_40px_rgba(129,74,200,0.1)] hover:border-[#e34a2e]/40 transition-colors"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="relative w-28 h-28 mb-6 group-hover:scale-105 transition-transform duration-500">
