@@ -91,8 +91,8 @@ export default function Footer() {
             <div>
               <h4 className="font-bold text-white mb-6">Social</h4>
               <ul className="space-y-3">
-                <li><a href="https://www.facebook.com/share/192uGvjy7Q/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/nexiog.technologies?igsh=MXgyZHlvc3A1Mnp5aA==" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">Twitter</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">LinkedIn</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">Twitter</a></li>
                 <li><a href="https://www.facebook.com/share/192uGvjy7Q/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">Facebook</a></li>
                 <li><a href="https://www.instagram.com/nexiog.technologies?igsh=MXgyZHlvc3A1Mnp5aA==" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">Instagram</a></li>
                 <li><a href="https://wa.me/917980888810" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">WhatsApp</a></li>

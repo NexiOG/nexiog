@@ -31,7 +31,7 @@ const socials = [
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
       </svg>
     ),
-    href: "#",
+    href: "https://www.facebook.com/share/192uGvjy7Q/",
     color: "group-hover:text-blue-500 group-hover:bg-blue-500/10 border-blue-500/20",
   },
   {
@@ -43,7 +43,7 @@ const socials = [
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
       </svg>
     ),
-    href: "#",
+    href: "https://www.instagram.com/nexiog.technologies?igsh=MXgyZHlvc3A1Mnp5aA==",
     color: "group-hover:text-pink-500 group-hover:bg-pink-500/10 border-pink-500/20",
   },
   {
