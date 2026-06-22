@@ -84,9 +84,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[clamp(2.5rem,8vw,8rem)] font-extrabold leading-[1.1] mb-6 tracking-tighter text-white drop-shadow-2xl"
+              className="text-[clamp(2.5rem,5vw,5.5rem)] font-extrabold leading-[1.05] mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
             >
-              We Engineer the Tech. You<br className="hidden sm:block" /> Capture the Market
+              We Engineer the Tech. You<br className="hidden md:inline" /> Capture the Market
             </MotionH1>
             <MotionP 
               initial={{ opacity: 0, y: 20 }}
