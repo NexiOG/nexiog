@@ -23,6 +23,13 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nexiog.com'),
   title: {

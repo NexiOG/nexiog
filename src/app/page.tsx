@@ -84,7 +84,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[clamp(2.5rem,5vw,5.5rem)] font-extrabold leading-[1.05] mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
+              className="text-[clamp(2.2rem,8vw,5.5rem)] font-extrabold leading-[1.05] mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
             >
               We Engineer the Tech. You<br className="hidden md:inline" /> Capture the Market
             </MotionH1>
@@ -92,7 +92,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(1.1rem,1.5vw,1.25rem)] text-white drop-shadow-lg mb-10 max-w-2xl mx-auto leading-[1.8] font-medium tracking-normal"
+              className="text-[clamp(1rem,1.5vw,1.25rem)] text-white drop-shadow-lg mb-10 max-w-2xl mx-auto leading-[1.8] font-medium tracking-normal px-4"
             >
               From Concept to Launch: We Build High-Performance Websites and Custom Software Solutions That Drive Business Growth.
             </MotionP>
@@ -100,7 +100,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-wrap justify-center items-center gap-6 pointer-events-auto"
+              className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 pointer-events-auto px-6"
             >
               {/* Primary 3D Button */}
               <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "group relative overflow-hidden" })}>
