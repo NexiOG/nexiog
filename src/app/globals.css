@@ -88,7 +88,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground relative;
+    @apply bg-background text-foreground relative overflow-x-hidden;
     background-color: #050505;
     background-image: 
       radial-gradient(ellipse at top center, rgba(129, 74, 200, 0.15), transparent 70%),
@@ -99,7 +99,7 @@
     background-attachment: fixed, fixed, fixed;
   }
   html {
-    @apply font-sans;
+    @apply font-sans overflow-x-hidden;
   }
 }
 

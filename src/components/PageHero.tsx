@@ -56,17 +56,17 @@ export default function PageHero({
 
         {/* CTA Buttons */}
         {!hideButtons && (
-          <div className={`flex flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out delay-400 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out delay-400 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <Link 
               href={primaryCtaLink} 
-              className={buttonVariants({ variant: "default", size: "lg", className: "group relative overflow-hidden" })}
+              className={buttonVariants({ variant: "default", size: "lg", className: "group relative overflow-hidden w-full sm:w-auto" })}
             >
               {primaryCtaText}
             </Link>
             
             <Link 
               href={secondaryCtaLink} 
-              className={buttonVariants({ variant: "secondary", size: "lg", className: "group relative overflow-hidden" })}
+              className={buttonVariants({ variant: "secondary", size: "lg", className: "group relative overflow-hidden w-full sm:w-auto" })}
             >
               {secondaryCtaText}
             </Link>
