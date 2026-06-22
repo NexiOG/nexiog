@@ -59,7 +59,7 @@ const FRAMER_IMAGES = [
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-hidden bg-background">
+      <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden bg-background">
         <video 
           autoPlay 
           loop 
@@ -72,13 +72,13 @@ export default function Home() {
 
         {/* Mobile Background Image */}
         <div 
-          className="absolute inset-0 w-full h-full z-0 opacity-50 md:hidden bg-cover bg-center bg-no-repeat pointer-events-none"
+          className="absolute inset-0 w-full h-full z-0 opacity-20 md:hidden bg-cover bg-center bg-no-repeat pointer-events-none"
           style={{ backgroundImage: "url('/images/mobile_hero_bg.png')" }}
         />
         
         {/* No additional background elements, only the video */}
 
-        <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none">
+        <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none mt-12 md:mt-0">
           <div className="max-w-4xl mx-auto mt-4 pointer-events-none text-center">
             <MotionH1 
               initial={{ opacity: 0, y: 30 }}
@@ -86,7 +86,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-[clamp(2.2rem,8vw,5.5rem)] font-extrabold leading-[1.05] mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
             >
-              We Engineer the Tech. You<br className="hidden md:inline" /> Capture the Market
+              We Engineer the Tech. <span className="block md:inline mt-2 md:mt-0">You Capture the Market</span>
             </MotionH1>
             <MotionP 
               initial={{ opacity: 0, y: 20 }}
