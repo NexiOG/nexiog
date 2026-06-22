@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Loader from "@/components/ui/Loader";
 import Chatbot from "@/components/Chatbot";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -92,6 +93,7 @@ export default function RootLayout({
           <Footer />
           <Chatbot />
         </TRPCProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
