@@ -440,15 +440,15 @@ export default function Home() {
                 </svg>
               </Link>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#1c1c1c] flex items-center justify-center border border-white/10 shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e34a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+917980888810" className="flex items-center gap-4 group cursor-pointer transition-all">
+                <div className="w-12 h-12 rounded-full bg-[#1c1c1c] flex items-center justify-center border border-white/10 shadow-md group-hover:bg-[#e34a2e]/10 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e34a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">Call Us!</div>
-                  <div className="font-bold text-white tracking-wide text-lg">+123 456 789</div>
+                  <div className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider group-hover:text-white transition-colors">Call Us!</div>
+                  <div className="font-bold text-white tracking-wide text-lg group-hover:text-[#e34a2e] transition-colors">+91 79808 88810</div>
                 </div>
-              </div>
+              </a>
             </MotionDiv>
 
           </div>
