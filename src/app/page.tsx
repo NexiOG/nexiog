@@ -116,26 +116,26 @@ export default function Home() {
             </MotionDiv>
           </div>
         </div>
-      </section>
 
-      {/* Tech Stack Banner */}
-      <section className="relative w-full bg-black/40 border-y border-white/5 py-8 overflow-hidden flex whitespace-nowrap z-20">
-        <div className="flex animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
-          {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-            <div key={i} className="flex flex-shrink-0 items-center justify-center h-12 px-5 rounded-full bg-white/5 border border-white/10 group transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] cursor-default mx-3 gap-3">
-              {tech.src && (
-                <img 
-                  src={tech.src} 
-                  alt={tech.name} 
-                  title={tech.name}
-                  className="w-6 h-6 transition-all duration-300 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 drop-shadow-sm" 
-                />
-              )}
-              <span className="text-sm font-semibold text-white/80 tracking-wide group-hover:text-white transition-all duration-300 whitespace-nowrap">
-                {tech.name}
-              </span>
-            </div>
-          ))}
+        {/* Tech Stack Banner inside Hero */}
+        <div className="absolute bottom-0 left-0 w-full bg-black/40 border-t border-white/5 py-6 overflow-hidden flex whitespace-nowrap z-20">
+          <div className="flex animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
+            {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+              <div key={i} className="flex flex-shrink-0 items-center justify-center h-12 px-5 rounded-full bg-white/5 border border-white/10 group transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] cursor-default mx-3 gap-3">
+                {tech.src && (
+                  <img 
+                    src={tech.src} 
+                    alt={tech.name} 
+                    title={tech.name}
+                    className="w-6 h-6 transition-all duration-300 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 drop-shadow-sm" 
+                  />
+                )}
+                <span className="text-sm font-semibold text-white/80 tracking-wide group-hover:text-white transition-all duration-300 whitespace-nowrap">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
