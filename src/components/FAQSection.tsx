@@ -72,7 +72,7 @@ export default function FAQSection() {
             {/* Left Image Component */}
             <div className="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 hidden lg:block">
               <Image 
-                src="/images/faq_support_realistic.png" 
+                src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=800&q=80" 
                 alt="Support Team" 
                 fill 
                 className="object-cover"
