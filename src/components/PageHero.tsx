@@ -26,7 +26,7 @@ export default function PageHero({
 }: PageHeroProps) {
 
   return (
-    <section className="relative w-full flex flex-col items-center justify-center pt-48 pb-32 px-6 min-h-[60vh] overflow-hidden bg-[#050505] text-white border-b border-white/5">
+    <section className="relative w-full flex flex-col items-center justify-center pt-32 md:pt-48 pb-20 md:pb-32 px-4 sm:px-6 min-h-[50vh] md:min-h-[60vh] overflow-hidden bg-[#050505] text-white border-b border-white/5">
       {/* WebGL Fluid Background */}
       <WebGLBackground />
       
@@ -50,7 +50,7 @@ export default function PageHero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(3rem,6vw,6rem)] font-extrabold tracking-tighter mb-8 leading-[1.05]"
+          className="text-[clamp(2.5rem,8vw,6rem)] font-extrabold tracking-tighter mb-8 leading-[1.05]"
         >
           {title}
         </MotionH1>

@@ -12,13 +12,22 @@ export default function WebGLBackground() {
     const gl = canvas.getContext('webgl');
     if (!gl) return;
 
-    // Set canvas size
+    // Set canvas size securely for mobile and high DPI screens
     const setSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (!canvas) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap at 2 for performance
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
     window.addEventListener('resize', setSize);
+    window.addEventListener('orientationchange', () => setTimeout(setSize, 100));
     setSize();
 
     // Vertex Shader
@@ -155,6 +164,7 @@ export default function WebGLBackground() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', setSize);
+      window.removeEventListener('orientationchange', setSize);
     };
   }, []);
 
