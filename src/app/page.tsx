@@ -385,10 +385,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-muted-foreground text-[1.1rem] leading-[1.7] mb-12 max-w-[95%] text-left"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-muted-foreground text-[1.1rem] leading-[1.8] mb-12 max-w-[95%] text-left"
             >
-              At NexiOG, we don't just write code; we engineer digital experiences that drive measurable business growth. Partner with us for cutting-edge technology, unmatched performance, and a team dedicated to turning your vision into reality. We build scalable architectures that future-proof your business, ensuring every solution is secure, lightning-fast, and optimized for maximum user engagement.
+              At NexiOG Technologies, we transcend traditional development. We are a powerhouse of digital engineering, focused entirely on driving measurable, compounding business growth for our clients. We do not just build websites and applications; we architect scalable, high-performance ecosystems that dominate your market.
+              <br /><br />
+              By partnering with us, you gain access to a relentless team of innovators who leverage cutting-edge tech stacks. Every line of code we write is optimized for lightning-fast speeds, impregnable security, and unparalleled user engagement, ensuring your enterprise is entirely future-proofed.
             </MotionP>
 
             <MotionDiv 
@@ -399,24 +401,32 @@ export default function Home() {
               className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12"
             >
               {/* Card 1 */}
-              <div className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/30 transition-colors shadow-xl">
+              <MotionDiv 
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
+              >
                 <div className="text-4xl font-extrabold text-white mb-2">25+</div>
-                <div className="text-sm font-medium text-white/80 mb-6">Skilled Team Developers</div>
+                <div className="text-sm font-medium text-white/80 mb-6">Elite Engineers & Strategists</div>
                 <div className="w-full h-[1px] bg-white/10 mb-6"></div>
                 <div className="text-sm text-muted-foreground leading-relaxed">
-                  Deliver excellence through experience, innovation.
+                  Our elite roster delivers absolute technical excellence through relentless innovation and deep industry expertise.
                 </div>
-              </div>
+              </MotionDiv>
 
               {/* Card 2 */}
-              <div className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/30 transition-colors shadow-xl">
+              <MotionDiv 
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
+              >
                 <div className="text-4xl font-extrabold text-white mb-2">15+</div>
                 <div className="text-sm font-medium text-white/80 mb-6">Countries Served Globally</div>
                 <div className="w-full h-[1px] bg-white/10 mb-6"></div>
                 <div className="text-sm text-muted-foreground leading-relaxed">
-                  Deliver excellence through experience, innovation.
+                  We successfully deploy and scale enterprise-grade digital solutions for businesses across international markets.
                 </div>
-              </div>
+              </MotionDiv>
             </MotionDiv>
 
             <MotionDiv
