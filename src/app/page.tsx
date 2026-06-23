@@ -455,7 +455,7 @@ export default function Home() {
             className="relative w-full aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
           >
             <Image 
-              src="/images/why-choose-us.png" 
+              src="/images/why_choose_us_realistic.png" 
               alt="Team collaborating" 
               fill 
               className="object-cover object-center"
