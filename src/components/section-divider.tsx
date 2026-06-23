@@ -20,7 +20,7 @@ export function SectionDivider({ className = "", inverted = false }: SectionDivi
       >
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap"
         >
           <span className={`text-lg md:text-xl font-black uppercase tracking-[0.2em] px-2 ${inverted ? 'text-black' : 'text-white'}`}>
@@ -35,7 +35,7 @@ export function SectionDivider({ className = "", inverted = false }: SectionDivi
       >
         <motion.div
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap"
         >
           <span className={`text-lg md:text-xl font-black uppercase tracking-[0.2em] px-2 ${inverted ? 'text-white' : 'text-black'}`}>
