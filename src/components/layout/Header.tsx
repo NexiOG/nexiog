@@ -42,7 +42,7 @@ export default function Header() {
       <div 
         className={`pointer-events-auto flex justify-between items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] w-full rounded-none px-6 md:px-8 ${
           isScrolled 
-            ? "py-4 bg-black/50 backdrop-blur-md border-b border-white/5" 
+            ? "py-4 bg-transparent backdrop-blur-md border-b border-white/5" 
             : "py-6 bg-transparent border-transparent"
         }`}
       >

@@ -79,7 +79,7 @@ export default function FloatingSocials() {
       transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3"
     >
-      <div className="bg-[#0a0514]/80 backdrop-blur-md border border-white/10 p-2 rounded-full shadow-2xl flex flex-col gap-3 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-20 before:pointer-events-none">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-2 rounded-full shadow-2xl flex flex-col gap-3 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/20 before:to-transparent before:opacity-30 before:pointer-events-none">
         {socials.map((social) => (
           <Link
             key={social.name}
