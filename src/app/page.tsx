@@ -59,19 +59,17 @@ const FRAMER_IMAGES = [
 export default function Home() {
   return (
     <>
-      <div className="relative overflow-hidden bg-background">
+      <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden bg-background">
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
-          style={{ WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)" }}
+          style={{ WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)" }}
         >
           <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
-
-        <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 z-10">
 
         <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none mt-12 md:mt-0">
           <div className="max-w-4xl mx-auto mt-4 pointer-events-none text-center">
@@ -142,7 +140,6 @@ export default function Home() {
       <div className="pt-16 md:pt-24 relative z-20">
         <SectionDivider inverted={false} />
       </div>
-    </div>
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative z-10">
