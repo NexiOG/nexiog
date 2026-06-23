@@ -14,6 +14,15 @@ export default function Footer() {
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 250px)'
         }}
       >
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+        >
+          <source src="/video/footer%20background.mp4" type="video/mp4" />
+        </video>
         <Particles />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-[800px] h-[800px] rounded-full mix-blend-screen bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.3)_0%,rgba(0,0,0,0)_60%)]" />
