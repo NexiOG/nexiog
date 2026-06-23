@@ -8,9 +8,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "btn-animated text-[#d8b4fe] hover:text-white shadow-[0_0_20px_rgba(167,139,250,0.3)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)] hover:-translate-y-1 active:translate-y-0.5 transition-all duration-300 font-extrabold uppercase tracking-widest",
-        secondary: "btn-animated btn-animated-secondary text-white/80 hover:text-white shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:-translate-y-1 active:translate-y-0.5 transition-all duration-300 font-extrabold uppercase tracking-widest",
-        accent: "btn-animated btn-animated-accent text-[#ff6a52] hover:text-white shadow-[0_0_20px_rgba(227,74,46,0.3)] hover:shadow-[0_0_40px_rgba(227,74,46,0.6)] hover:-translate-y-1 active:translate-y-0.5 transition-all duration-300 font-extrabold uppercase tracking-widest",
+        default: "bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-space uppercase tracking-wider font-bold",
+        secondary: "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-space uppercase tracking-wider font-bold",
+        accent: "bg-accent text-white hover:bg-accent/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-space uppercase tracking-wider font-bold",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         ghost:
