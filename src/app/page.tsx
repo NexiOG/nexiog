@@ -66,6 +66,7 @@ export default function Home() {
           muted 
           playsInline 
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+          style={{ WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)" }}
         >
           <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
@@ -115,9 +116,6 @@ export default function Home() {
             </MotionDiv>
           </div>
         </div>
-
-        {/* Bottom Fade to dissolve video into background */}
-        <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-background via-background/80 to-transparent z-0 pointer-events-none" />
       </section>
 
       {/* Tech Stack Banner */}
