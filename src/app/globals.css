@@ -88,14 +88,7 @@
   }
   body {
     @apply bg-background text-foreground relative overflow-x-hidden;
-    background-color: #050505;
-    background-image: 
-      radial-gradient(ellipse at top center, rgba(129, 74, 200, 0.15), transparent 70%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 100% 100%, 4rem 4rem, 4rem 4rem;
-    background-position: top center, center center, center center;
-    background-attachment: fixed, fixed, fixed;
+    background-color: transparent; /* Changed from #050505 to transparent to let canvas show through */
   }
   html {
     @apply font-sans overflow-x-hidden;

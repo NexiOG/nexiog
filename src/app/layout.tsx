@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import Loader from "@/components/ui/Loader";
 import Chatbot from "@/components/Chatbot";
 import FloatingSocials from "@/components/FloatingSocials";
+import StarfieldBackground from "@/components/StarfieldBackground";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -89,7 +90,8 @@ export default function RootLayout({
       suppressHydrationWarning
       style={{ colorScheme: "dark" }}
     >
-      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans relative">
+      <body className="min-h-screen flex flex-col text-foreground font-sans relative">
+        <StarfieldBackground />
         <TRPCProvider>
           <ScrollProgress />
           <Loader />
