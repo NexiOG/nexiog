@@ -65,16 +65,10 @@ export default function Home() {
           loop 
           muted 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none hidden md:block"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
         >
           <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
-
-        {/* Mobile Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full z-0 opacity-20 md:hidden bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: "url('/images/mobile_hero_bg.png')" }}
-        />
         
         {/* No additional background elements, only the video */}
 
