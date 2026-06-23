@@ -59,7 +59,7 @@ const FRAMER_IMAGES = [
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden bg-background">
+      <section className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-16 lg:px-24 overflow-hidden bg-background">
         <video 
           autoPlay 
           loop 
@@ -71,13 +71,13 @@ export default function Home() {
           <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
 
-        <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none mt-12 md:mt-0">
-          <div className="max-w-4xl mx-auto mt-4 pointer-events-none text-center">
+        <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none mt-6 md:mt-0">
+          <div className="max-w-4xl mx-auto mt-2 md:mt-4 pointer-events-none text-center">
             <MotionH1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[clamp(2.2rem,8vw,5.5rem)] font-extrabold leading-[1.05] mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
+              className="text-[clamp(1.8rem,7vw,5.5rem)] font-extrabold leading-[1.08] mb-4 md:mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
             >
               We Engineer the Tech. <span className="block md:inline mt-2 md:mt-0">You Capture the Market</span>
             </MotionH1>
@@ -85,7 +85,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(1rem,1.5vw,1.25rem)] text-white drop-shadow-lg mb-10 max-w-2xl mx-auto leading-[1.8] font-medium tracking-normal px-4"
+              className="text-[clamp(0.875rem,2.5vw,1.25rem)] text-white drop-shadow-lg mb-6 md:mb-10 max-w-2xl mx-auto leading-[1.6] md:leading-[1.8] font-medium tracking-normal px-2 sm:px-4"
             >
               From Concept to Launch: We Build High-Performance Websites and Custom Software Solutions That Drive Business Growth.
             </MotionP>
@@ -93,7 +93,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 pointer-events-auto px-6"
+              className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 pointer-events-auto px-4 sm:px-6 w-full sm:w-auto"
             >
               {/* Primary 3D Button */}
               <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "group relative overflow-hidden" })}>
@@ -116,19 +116,19 @@ export default function Home() {
         </div>
 
         {/* Tech Stack Banner inside Hero */}
-        <div className="absolute bottom-0 left-0 w-full bg-transparent py-6 overflow-hidden flex whitespace-nowrap z-20">
-          <div className="flex animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
+        <div className="absolute bottom-0 left-0 w-full bg-transparent py-3 md:py-6 overflow-hidden flex whitespace-nowrap z-20">
+          <div className="flex animate-[scroll_60s_linear_infinite] md:animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
             {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-              <div key={i} className="flex flex-shrink-0 items-center justify-center h-12 px-5 rounded-full bg-white/5 border border-white/10 group transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] cursor-default mx-3 gap-3">
+              <div key={i} className="flex flex-shrink-0 items-center justify-center h-9 md:h-12 px-3 md:px-5 rounded-full bg-white/5 border border-white/10 group transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] cursor-default mx-1.5 md:mx-3 gap-2 md:gap-3">
                 {tech.src && (
                   <img 
                     src={tech.src} 
                     alt={tech.name} 
                     title={tech.name}
-                    className="w-6 h-6 transition-all duration-300 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 drop-shadow-sm" 
+                    className="w-4 h-4 md:w-6 md:h-6 transition-all duration-300 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 drop-shadow-sm" 
                   />
                 )}
-                <span className="text-sm font-semibold text-white/80 tracking-wide group-hover:text-white transition-all duration-300 whitespace-nowrap">
+                <span className="text-xs md:text-sm font-semibold text-white/80 tracking-wide group-hover:text-white transition-all duration-300 whitespace-nowrap">
                   {tech.name}
                 </span>
               </div>
@@ -142,8 +142,8 @@ export default function Home() {
       </div>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 relative z-10">
-        <div className="flex flex-col items-center justify-center mb-24 relative">
+      <section id="services" className="py-12 md:py-20 px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col items-center justify-center mb-12 md:mb-24 relative">
           {/* Subtle background glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[120px] bg-[#3b2166]/30 blur-[80px] rounded-[100%] pointer-events-none" />
           
@@ -164,16 +164,16 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(3.5rem,6vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10"
+            className="text-[clamp(2.2rem,7vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10"
           >
             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">Digital Services</span>
           </MotionH2>
         </div>
-        <div className="max-w-7xl mx-auto flex flex-col gap-32">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-32">
           {SERVICES.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div key={service.id} className={`flex flex-col md:flex-row items-center gap-16 lg:gap-24 ${!isEven ? 'md:flex-row-reverse' : ''}`}>
+              <div key={service.id} className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24 ${!isEven ? 'md:flex-row-reverse' : ''}`}>
                 
                 {/* Image Side */}
                 <MotionDiv 
@@ -210,19 +210,19 @@ export default function Home() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                     {service.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-[1.1rem] lg:text-[1.2rem] text-muted-foreground leading-relaxed mb-10 max-w-lg">
+                  <p className="text-[0.95rem] md:text-[1.1rem] lg:text-[1.2rem] text-muted-foreground leading-relaxed mb-6 md:mb-10 max-w-lg">
                     {service.description}
                   </p>
                   
                   {/* Tags */}
                   <div className="flex flex-wrap gap-3">
                     {service.tags?.map(tag => (
-                      <span key={tag} className="px-5 py-2.5 rounded-lg border border-white/10 bg-[#0a0a0a] text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-white transition-colors cursor-default shadow-sm">
+                      <span key={tag} className="px-3 md:px-5 py-2 md:py-2.5 rounded-lg border border-white/10 bg-[#0a0a0a] text-xs md:text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-white transition-colors cursor-default shadow-sm">
                         {tag}
                       </span>
                     ))}
@@ -252,8 +252,8 @@ export default function Home() {
       <SectionDivider inverted={true} />
 
       {/* Methodology Section */}
-      <section id="methodology" className="py-20 px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
-        <div className="flex flex-col items-center text-center mb-20 relative">
+      <section id="methodology" className="py-12 md:py-20 px-4 sm:px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
+        <div className="flex flex-col items-center text-center mb-12 md:mb-20 relative">
           {/* Subtle background glow with continuous float animation */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[120px] bg-[#3b2166]/30 blur-[80px] rounded-[100%] pointer-events-none animate-float-medium" />
 
@@ -272,7 +272,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[clamp(3.5rem,6vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10 mb-8"
+            className="text-[clamp(2rem,7vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10 mb-6 md:mb-8"
           >
             A Proven Process for<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">Exceptional Results</span>
           </MotionH2>
@@ -282,12 +282,12 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[1.25rem] md:text-[1.35rem] text-muted-foreground/80 max-w-3xl leading-[1.6] tracking-wide font-normal relative z-10"
+            className="text-base md:text-[1.25rem] lg:text-[1.35rem] text-muted-foreground/80 max-w-3xl leading-[1.6] tracking-wide font-normal relative z-10 px-2"
           >
             Every engagement follows our battle-tested framework,<br className="hidden md:block" /> ensuring clarity, quality, and on-time delivery at every stage.
           </MotionP>
         </div>
-        <div className="max-w-7xl mx-auto relative py-8 w-full grid grid-cols-1 md:grid-cols-12 gap-6 px-4">
+        <div className="max-w-7xl mx-auto relative py-4 md:py-8 w-full grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 px-0 sm:px-4">
           {METHODOLOGY.map((step, i) => (
             <MotionDiv 
               key={i} 
@@ -295,7 +295,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative flex flex-col justify-end bg-[#080414] border border-white/5 rounded-3xl overflow-hidden hover:border-[#8b5cf6]/40 transition-all duration-700 hover-3d-shine shadow-2xl min-h-[420px] p-8 md:p-10 ${step.colSpan}`}
+              className={`group relative flex flex-col justify-end bg-[#080414] border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#8b5cf6]/40 transition-all duration-700 hover-3d-shine shadow-2xl min-h-[320px] md:min-h-[420px] p-6 md:p-10 ${step.colSpan}`}
             >
               {/* Background Image with Gradient Overlay */}
               <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
@@ -309,7 +309,7 @@ export default function Home() {
               </div>
               
               {/* Step Number Background */}
-              <div className="absolute top-4 right-6 text-[8rem] font-black text-white/[0.02] group-hover:text-white/[0.06] transition-colors duration-700 pointer-events-none leading-none select-none">
+              <div className="absolute top-4 right-6 text-[5rem] md:text-[8rem] font-black text-white/[0.02] group-hover:text-white/[0.06] transition-colors duration-700 pointer-events-none leading-none select-none">
                 {step.step}
               </div>
 
@@ -321,10 +321,10 @@ export default function Home() {
                     Phase {step.step} — {step.title}
                   </span>
                 </div>
-                <h4 className="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-[1.15] tracking-tight group-hover:text-[#e2e8f0] transition-colors">
+                <h4 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-3 md:mb-4 leading-[1.15] tracking-tight group-hover:text-[#e2e8f0] transition-colors">
                   {step.subtitle}
                 </h4>
-                <p className="text-muted-foreground/80 text-base md:text-lg leading-[1.7] font-normal max-w-[95%]">
+                <p className="text-muted-foreground/80 text-sm md:text-base lg:text-lg leading-[1.6] md:leading-[1.7] font-normal max-w-[95%]">
                   {step.description}
                 </p>
               </div>
@@ -350,11 +350,11 @@ export default function Home() {
       <SectionDivider inverted={false} />
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-6 relative z-10 bg-transparent overflow-hidden">
+      <section className="py-12 md:py-20 px-4 sm:px-6 relative z-10 bg-transparent overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#3b2166]/20 blur-[100px] rounded-full pointer-events-none -translate-y-1/2" />
         
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-20 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-10 md:mb-20 relative z-10">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -370,14 +370,14 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(3.5rem,5vw,5rem)] font-extrabold text-white leading-[1] tracking-tighter mb-8"
+            className="text-[clamp(2rem,6vw,5rem)] font-extrabold text-white leading-[1.05] tracking-tighter mb-6 md:mb-8"
           >
             Smart web solutions built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">your success</span>
           </MotionH2>
 
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center relative z-10">
           
           {/* Left Content */}
           <div className="flex flex-col items-start">
@@ -386,7 +386,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-muted-foreground text-[1.1rem] leading-[1.8] mb-12 max-w-[95%] text-left"
+              className="text-muted-foreground text-[0.95rem] md:text-[1.1rem] leading-[1.7] md:leading-[1.8] mb-8 md:mb-12 max-w-[95%] text-left"
             >
               At NexiOG Technologies, we transcend traditional development. We are a powerhouse of digital engineering, focused entirely on driving measurable, compounding business growth for our clients. We do not just build websites and applications; we architect scalable, high-performance ecosystems that dominate your market.
               <br /><br />
@@ -398,17 +398,17 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12"
             >
               {/* Card 1 */}
               <MotionDiv 
                 whileHover={{ scale: 1.03, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
+                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-5 md:p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
               >
-                <div className="text-4xl font-extrabold text-white mb-2">25+</div>
-                <div className="text-sm font-medium text-white/80 mb-6">Elite Engineers & Strategists</div>
-                <div className="w-full h-[1px] bg-white/10 mb-6"></div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">25+</div>
+                <div className="text-sm font-medium text-white/80 mb-4 md:mb-6">Elite Engineers & Strategists</div>
+                <div className="w-full h-[1px] bg-white/10 mb-4 md:mb-6"></div>
                 <div className="text-sm text-muted-foreground leading-relaxed">
                   Our elite roster delivers absolute technical excellence through relentless innovation and deep industry expertise.
                 </div>
@@ -418,11 +418,11 @@ export default function Home() {
               <MotionDiv 
                 whileHover={{ scale: 1.03, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
+                className="bg-[#11091e]/80 border border-white/5 rounded-2xl p-5 md:p-8 backdrop-blur-sm hover:border-[#e34a2e]/40 transition-colors shadow-xl cursor-pointer"
               >
-                <div className="text-4xl font-extrabold text-white mb-2">15+</div>
-                <div className="text-sm font-medium text-white/80 mb-6">Countries Served Globally</div>
-                <div className="w-full h-[1px] bg-white/10 mb-6"></div>
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-2">15+</div>
+                <div className="text-sm font-medium text-white/80 mb-4 md:mb-6">Countries Served Globally</div>
+                <div className="w-full h-[1px] bg-white/10 mb-4 md:mb-6"></div>
                 <div className="text-sm text-muted-foreground leading-relaxed">
                   We successfully deploy and scale enterprise-grade digital solutions for businesses across international markets.
                 </div>
@@ -434,7 +434,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center gap-8"
+              className="flex flex-wrap items-center gap-4 md:gap-8"
             >
               <Link href="/contact" className={buttonVariants({ variant: "accent", className: "group relative overflow-hidden gap-2 px-10" })}>
                 Contact Us Now
@@ -462,7 +462,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative w-full aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            className="relative w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
           >
             <Image 
               src="/images/why_choose_us_realistic.png" 
@@ -478,8 +478,8 @@ export default function Home() {
       <SectionDivider inverted={true} />
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
-        <div className="flex flex-col items-center text-center mb-20 relative">
+      <section id="portfolio" className="py-12 md:py-20 px-4 sm:px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
+        <div className="flex flex-col items-center text-center mb-10 md:mb-20 relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[120px] bg-[#3b2166]/30 blur-[80px] rounded-[100%] pointer-events-none" />
           
           <MotionDiv 
@@ -502,7 +502,7 @@ export default function Home() {
           </MotionH2>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 overflow-hidden h-[800px] rounded-[3rem] border border-white/10 bg-[#0a0514]/50 backdrop-blur-sm shadow-2xl">
+        <div className="max-w-7xl mx-auto relative z-10 overflow-hidden h-[500px] md:h-[800px] rounded-2xl md:rounded-[3rem] border border-white/10 bg-[#0a0514]/50 backdrop-blur-sm shadow-2xl">
           {/* Fading Edges for the marquee */}
           <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#0a0514] to-transparent z-20 pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0514] to-transparent z-20 pointer-events-none" />
@@ -616,7 +616,7 @@ export default function Home() {
       <SectionDivider inverted={false} />
 
       {/* Core Features Section */}
-      <section id="features" className="py-20 px-6 relative z-10 overflow-hidden">
+      <section id="features" className="py-12 md:py-20 px-4 sm:px-6 relative z-10 overflow-hidden">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 relative z-10">
           <MotionDiv 
@@ -640,7 +640,7 @@ export default function Home() {
         </div>
 
         {/* Content Container */}
-        <div className="relative w-full flex justify-center lg:justify-end items-center min-h-[600px] max-w-7xl mx-auto rounded-[3rem] overflow-hidden">
+        <div className="relative w-full flex justify-center lg:justify-end items-center min-h-[450px] md:min-h-[600px] max-w-7xl mx-auto rounded-2xl md:rounded-[3rem] overflow-hidden">
           {/* The Image with Vignette Mask (Dissolving Effect) */}
           <div 
             className="absolute inset-0 z-0 pointer-events-none"
@@ -663,7 +663,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 w-full max-w-xl bg-gradient-to-br from-[#180d2b]/80 to-[#11091e]/90 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-[0_0_80px_rgba(129,74,200,0.15)] lg:mr-[5%]"
+            className="relative z-10 w-full max-w-xl bg-gradient-to-br from-[#180d2b]/80 to-[#11091e]/90 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-[2rem] p-6 md:p-12 shadow-[0_0_80px_rgba(129,74,200,0.15)] lg:mr-[5%]"
           >
             <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               Our core features are designed to deliver high-performance, scalable web solutions that help your business succeed online.
