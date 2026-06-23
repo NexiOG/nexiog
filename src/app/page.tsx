@@ -66,6 +66,7 @@ export default function Home() {
           muted 
           playsInline 
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+          style={{ WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)" }}
         >
           <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
