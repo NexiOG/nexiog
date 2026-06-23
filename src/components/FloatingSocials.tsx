@@ -79,14 +79,14 @@ export default function FloatingSocials() {
       transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3"
     >
-      <div className="bg-white/80 backdrop-blur-md border border-slate-200 p-2 rounded-full shadow-lg flex flex-col gap-3 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-slate-100/50 before:to-transparent before:opacity-50 before:pointer-events-none">
+      <div className="bg-[#0a0514]/80 backdrop-blur-md border border-white/10 p-2 rounded-full shadow-2xl flex flex-col gap-3 relative before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-20 before:pointer-events-none">
         {socials.map((social) => (
           <Link
             key={social.name}
             href={social.href}
             target={social.href.startsWith("tel") || social.href.startsWith("mailto") ? "_self" : "_blank"}
             rel="noopener noreferrer"
-            className={`group relative w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-500 transition-all duration-300 ${social.color.replace('white', 'slate-900').replace('white/10', 'slate-200')}`}
+            className={`group relative w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-transparent text-white/70 transition-all duration-300 ${social.color}`}
             aria-label={social.name}
           >
             <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
@@ -94,7 +94,7 @@ export default function FloatingSocials() {
             </div>
             
             {/* Tooltip */}
-            <span className="absolute left-full ml-4 px-2.5 py-1.5 bg-white border border-slate-200 text-slate-800 text-xs font-semibold rounded-md opacity-0 -translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap shadow-md font-space">
+            <span className="absolute left-full ml-4 px-2.5 py-1.5 bg-[#150a2f] border border-white/10 text-white text-xs font-semibold rounded-md opacity-0 -translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap shadow-xl">
               {social.name}
             </span>
           </Link>

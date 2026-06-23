@@ -85,9 +85,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${syne.variable} ${spaceGrotesk.variable} antialiased`}
+      className={`${outfit.variable} ${syne.variable} ${spaceGrotesk.variable} dark antialiased`}
       suppressHydrationWarning
-      style={{ colorScheme: "light" }}
+      style={{ colorScheme: "dark" }}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans relative">
         <TRPCProvider>
