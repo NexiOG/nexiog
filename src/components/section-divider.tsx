@@ -4,90 +4,34 @@ import { motion } from "framer-motion";
 
 interface SectionDividerProps {
   className?: string;
-  inverted?: boolean; // Reverses direction if true
+  inverted?: boolean; // Controls scroll direction
 }
 
 export function SectionDivider({ className = "", inverted = false }: SectionDividerProps) {
-  // We create a tileable SVG path that loops perfectly.
-  // One tile is 400px wide. We render enough tiles to cover any screen width + buffer for seamless infinite scrolling.
-  // 10 repeats = 4000px wide, which is enough for ultra-wide monitors.
-  const repeats = Array.from({ length: 10 });
-
+  const marqueeText = "NEXIOG TECHNOLOGIES • DIGITAL INNOVATION • WE BUILD THE FUTURE • ";
+  
   return (
-    <div className={`w-full relative h-[80px] md:h-[120px] overflow-hidden flex items-center justify-center z-10 pointer-events-none ${className}`}>
+    <div className={`w-full overflow-hidden flex items-center relative h-[60px] md:h-[80px] z-10 border-y border-[#814ac8]/20 bg-[#0a0514]/40 backdrop-blur-sm -my-4 md:-my-8 ${className}`}>
       
-      {/* Background ambient glow line */}
-      <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#814ac8]/20 to-transparent" />
+      {/* Edge Gradients for smooth fade out */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#05020a] to-transparent z-20 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#05020a] to-transparent z-20 pointer-events-none" />
 
-      {/* The scrolling container */}
+      {/* Scrolling Text Container */}
       <motion.div
         animate={{ x: inverted ? ["-50%", "0%"] : ["0%", "-50%"] }}
         transition={{ 
-          duration: 20, 
+          duration: 30, 
           repeat: Infinity, 
           ease: "linear" 
         }}
-        className="absolute top-0 bottom-0 flex items-center"
-        style={{ width: "8000px" }} // 20 repeats total across two identical divs
+        className="flex whitespace-nowrap"
       >
-        {/* Render two identical blocks for seamless looping */}
-        {[0, 1].map((blockIdx) => (
-          <div key={blockIdx} className="flex h-full items-center">
-            {repeats.map((_, idx) => (
-              <svg 
-                key={idx}
-                width="400" 
-                height="100" 
-                viewBox="0 0 400 100" 
-                className="flex-shrink-0 opacity-70"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id={`gradient-1-${blockIdx}-${idx}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#814ac8" />
-                    <stop offset="50%" stopColor="#df7afe" />
-                    <stop offset="100%" stopColor="#814ac8" />
-                  </linearGradient>
-                  
-                  <linearGradient id={`gradient-2-${blockIdx}-${idx}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#df7afe" />
-                    <stop offset="50%" stopColor="#814ac8" />
-                    <stop offset="100%" stopColor="#df7afe" />
-                  </linearGradient>
-
-                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
-                </defs>
-
-                {/* Wave 1: Arching UP then DOWN */}
-                <path 
-                  d="M 0 50 Q 100 0, 200 50 T 400 50" 
-                  fill="none" 
-                  stroke={`url(#gradient-1-${blockIdx}-${idx})`} 
-                  strokeWidth="2" 
-                  filter="url(#glow)"
-                />
-
-                {/* Wave 2: Arching DOWN then UP (Criss-Cross) */}
-                <path 
-                  d="M 0 50 Q 100 100, 200 50 T 400 50" 
-                  fill="none" 
-                  stroke={`url(#gradient-2-${blockIdx}-${idx})`} 
-                  strokeWidth="2" 
-                  filter="url(#glow)"
-                  className="opacity-80"
-                />
-
-                {/* Intersection glowing nodes */}
-                <circle cx="0" cy="50" r="3" fill="#ffffff" filter="url(#glow)" className="opacity-50" />
-                <circle cx="200" cy="50" r="4" fill="#df7afe" filter="url(#glow)" />
-                <circle cx="400" cy="50" r="3" fill="#ffffff" filter="url(#glow)" className="opacity-50" />
-              </svg>
-            ))}
-          </div>
-        ))}
+        <div className="flex items-center">
+          <span className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white/40 via-[#df7afe] to-white/40 uppercase tracking-[0.3em] px-2 select-none">
+            {marqueeText.repeat(15)}
+          </span>
+        </div>
       </motion.div>
     </div>
   );
