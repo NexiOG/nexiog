@@ -4,35 +4,46 @@ import { motion } from "framer-motion";
 
 interface SectionDividerProps {
   className?: string;
-  inverted?: boolean; // Controls scroll direction
+  inverted?: boolean; // Controls whether the crossing is mirrored
 }
 
 export function SectionDivider({ className = "", inverted = false }: SectionDividerProps) {
-  const marqueeText = "NEXIOG TECHNOLOGIES • DIGITAL INNOVATION • WE BUILD THE FUTURE • ";
+  const text1 = "NEXIOG TECHNOLOGIES • DIGITAL INNOVATION • WE BUILD THE FUTURE • ";
+  const text2 = "WEB DEVELOPMENT • APP DESIGN • DIGITAL MARKETING • IT SOLUTIONS • ";
   
   return (
-    <div className={`w-full overflow-hidden flex items-center relative h-[60px] md:h-[80px] z-10 border-y border-[#814ac8]/20 bg-[#0a0514]/40 backdrop-blur-sm -my-4 md:-my-8 ${className}`}>
+    <div className={`w-full overflow-hidden flex items-center justify-center relative h-[150px] md:h-[200px] z-20 -my-10 md:-my-16 ${className}`}>
       
-      {/* Edge Gradients for smooth fade out */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#05020a] to-transparent z-20 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#05020a] to-transparent z-20 pointer-events-none" />
-
-      {/* Scrolling Text Container */}
-      <motion.div
-        animate={{ x: inverted ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ 
-          duration: 30, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="flex whitespace-nowrap"
+      {/* Ribbon 1: Angled up, flowing left */}
+      <div 
+        className={`absolute w-[120vw] left-[-10vw] py-3 md:py-4 z-10 shadow-[0_0_30px_rgba(129,74,200,0.4)] border-y border-white/20 backdrop-blur-md ${inverted ? 'bg-[#df7afe] rotate-[-4deg]' : 'bg-[#814ac8] rotate-[-4deg]'}`}
       >
-        <div className="flex items-center">
-          <span className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white/40 via-[#df7afe] to-white/40 uppercase tracking-[0.3em] px-2 select-none">
-            {marqueeText.repeat(15)}
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap"
+        >
+          <span className={`text-lg md:text-xl font-black uppercase tracking-[0.2em] px-2 ${inverted ? 'text-black' : 'text-white'}`}>
+            {text1.repeat(15)}
           </span>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Ribbon 2: Angled down, flowing right */}
+      <div 
+        className={`absolute w-[120vw] left-[-10vw] py-3 md:py-4 z-20 shadow-[0_0_30px_rgba(223,122,254,0.4)] border-y border-white/20 backdrop-blur-md ${inverted ? 'bg-[#814ac8] rotate-[4deg]' : 'bg-[#df7afe] rotate-[4deg]'}`}
+      >
+        <motion.div
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap"
+        >
+          <span className={`text-lg md:text-xl font-black uppercase tracking-[0.2em] px-2 ${inverted ? 'text-white' : 'text-black'}`}>
+            {text2.repeat(15)}
+          </span>
+        </motion.div>
+      </div>
+
     </div>
   );
 }
