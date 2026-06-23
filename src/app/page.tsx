@@ -116,7 +116,8 @@ export default function Home() {
           </div>
         </div>
 
-
+        {/* Bottom Fade to dissolve video into background */}
+        <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-background via-background/80 to-transparent z-0 pointer-events-none" />
       </section>
 
       {/* Tech Stack Banner */}
