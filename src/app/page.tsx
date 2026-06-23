@@ -67,7 +67,7 @@ export default function Home() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none hidden md:block"
         >
-          <source src="/video/27706-365890968_medium.mp4" type="video/mp4" />
+          <source src="/video/background%203d.mp4" type="video/mp4" />
         </video>
 
         {/* Mobile Background Image */}
