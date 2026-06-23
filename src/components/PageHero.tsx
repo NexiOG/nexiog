@@ -26,10 +26,19 @@ export default function PageHero({
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center pt-48 pb-32 px-6 min-h-[60vh] overflow-hidden bg-[#050505] text-white border-b border-white/5">
-      {/* Premium Tech Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-      
-      {/* Massive Top Glow */}
+      {/* Animated Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+        style={{ WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)" }}
+      >
+        <source src="/video/background%203d.mp4" type="video/mp4" />
+      </video>
+
+      {/* Massive Top Glow for depth */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] opacity-40 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#7e57c2] via-[#e34a2e]/20 to-transparent blur-[120px] mix-blend-screen rounded-full transform -translate-y-1/2" />
       </div>
