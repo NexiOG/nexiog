@@ -5,7 +5,7 @@ import { METHODOLOGY } from "@/config/methodology";
 import Link from "next/link";
 import Image from "next/image";
 import { MotionDiv, MotionH1, MotionH2, MotionP } from "@/components/Motion";
-import { ParallaxDivider } from "@/components/parallax-divider";
+import { SectionDivider } from "@/components/section-divider";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import { buttonVariants } from "@/components/ui/button";
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ParallaxDivider imageSrc="/images/light-office-1.png" />
+      <SectionDivider inverted={false} />
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative z-10">
@@ -249,7 +249,7 @@ export default function Home() {
         </MotionDiv>
       </section>
 
-      <ParallaxDivider imageSrc="/images/light-office-2.png" />
+      <SectionDivider inverted={true} />
 
       {/* Methodology Section */}
       <section id="methodology" className="py-20 px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
@@ -347,7 +347,7 @@ export default function Home() {
         </MotionDiv>
       </section>
 
-      <ParallaxDivider imageSrc="/images/light-office-1.png" />
+      <SectionDivider inverted={false} />
 
       {/* Why Choose Us Section */}
       <section className="py-20 px-6 relative z-10 bg-transparent overflow-hidden">
@@ -465,7 +465,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ParallaxDivider imageSrc="/images/light-office-2.png" />
+      <SectionDivider inverted={true} />
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 px-6 relative z-10 bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.1)_0%,rgba(0,0,0,0)_70%)]">
@@ -603,7 +603,7 @@ export default function Home() {
 
       <TestimonialsSection />
 
-      <ParallaxDivider imageSrc="/images/light-office-1.png" />
+      <SectionDivider inverted={false} />
 
       {/* Core Features Section */}
       <section id="features" className="py-20 px-6 relative z-10 overflow-hidden">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { MotionDiv, MotionH2 } from "@/components/Motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { ParallaxDivider } from "@/components/parallax-divider";
+import { SectionDivider } from "@/components/section-divider";
 
 const FAQS = [
   {
@@ -39,8 +39,8 @@ export default function FAQSection() {
 
   return (
     <>
-      {/* Parallax Divider for FAQ */}
-      <ParallaxDivider imageSrc="https://images.unsplash.com/photo-1557425955-df376b5903c8?auto=format&fit=crop&w=1600&q=80" />
+      {/* Animated SVG Wave Divider for FAQ */}
+      <SectionDivider inverted={false} />
 
       <section id="faq" className="py-24 px-6 relative z-10 bg-transparent overflow-hidden">
         

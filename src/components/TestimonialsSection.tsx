@@ -5,7 +5,7 @@ import { TESTIMONIALS } from "@/config/testimonials";
 import { MotionDiv, MotionH2 } from "@/components/Motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { ParallaxDivider } from "@/components/parallax-divider";
+import { SectionDivider } from "@/components/section-divider";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function TestimonialsSection() {
@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
 
   return (
     <>
-      <ParallaxDivider imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" />
+      <SectionDivider inverted={false} />
       
       <section id="testimonials" className="py-24 relative z-10 overflow-hidden">
         {/* Header */}
