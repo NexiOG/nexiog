@@ -139,6 +139,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="pt-16 md:pt-24 relative z-20">
+        <SectionDivider inverted={false} />
+      </div>
+
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative z-10">
         <div className="flex flex-col items-center justify-center mb-24 relative">
