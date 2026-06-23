@@ -26,17 +26,13 @@ export default function PageHero({
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center pt-48 pb-32 px-6 min-h-[60vh] overflow-hidden bg-[#050505] text-white border-b border-white/5">
-      {/* Animated Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
+      {/* Custom Generated Animated WebP Background */}
+      <img 
+        src="/video/inner_hero_bg.webp" 
+        alt="Animated Background" 
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
         style={{ WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)" }}
-      >
-        <source src="/video/background%203d.mp4" type="video/mp4" />
-      </video>
+      />
 
       {/* Massive Top Glow for depth */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] opacity-40 pointer-events-none">
