@@ -68,21 +68,6 @@ export default function ContactPage() {
         description="Whether you have a strict RFP or just a napkin sketch, our engineering team is ready to deliver world-class digital products."
         hideButtons={true}
       />
-      
-      {/* Hero Banner Image */}
-      <section className="px-6 max-w-7xl mx-auto -mt-10 mb-20 relative z-20">
-        <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}>
-          <div className="w-full h-[300px] md:h-[500px] relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-            <Image 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
-              alt="Premium Office" 
-              fill 
-              className="object-cover group-hover:scale-105 transition-transform duration-1000"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-          </div>
-        </MotionDiv>
-      </section>
 
       {/* Industries We Serve */}
       <section className="px-6 max-w-7xl mx-auto mb-24">
