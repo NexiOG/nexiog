@@ -5,6 +5,7 @@ import { PopupButton } from "react-calendly";
 import { MotionDiv, MotionH2, MotionP } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
 import Magnetic from "@/components/ui/Magnetic";
+import Image from "next/image";
 
 const SERVICES = [
   "Web Development",
@@ -62,14 +63,25 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background text-white pb-32">
       
       {/* Editorial Header */}
-      <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+      <section className="pt-40 pb-10 px-6 max-w-7xl mx-auto">
         <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
           <h1 className="text-[clamp(3rem,8vw,8rem)] font-black tracking-tighter leading-[0.9] mb-8">
             Let's build <br/><span className="text-[#e65100]">the future.</span>
           </h1>
-          <p className="text-xl md:text-3xl font-light text-white/50 max-w-3xl leading-relaxed">
+          <p className="text-xl md:text-3xl font-light text-white/50 max-w-3xl leading-relaxed mb-16">
             Whether you have a strict RFP or just a napkin sketch, our engineering team is ready to deliver world-class digital products.
           </p>
+          
+          {/* Hero Banner Image */}
+          <div className="w-full h-[300px] md:h-[500px] relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+            <Image 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
+              alt="Premium Office" 
+              fill 
+              className="object-cover group-hover:scale-105 transition-transform duration-1000"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          </div>
         </MotionDiv>
       </section>
 
@@ -122,16 +134,26 @@ export default function ContactPage() {
             </MotionDiv>
 
             {/* Testimonial */}
-            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative bg-[#050505] border border-white/10 p-8 rounded-2xl">
-              <div className="absolute top-4 left-6 text-6xl text-[#e65100]/20 font-serif leading-none">"</div>
-              <p className="text-lg md:text-xl font-light italic leading-relaxed text-white/90 relative z-10 mb-6">
+            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative p-8 md:p-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+              <Image 
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" 
+                alt="Abstract Background" 
+                fill 
+                className="object-cover opacity-20 group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0a0514]/90 to-[#e65100]/20" />
+              
+              <div className="absolute top-6 left-8 text-7xl text-[#e65100]/40 font-serif leading-none">"</div>
+              <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white relative z-10 mb-8 pt-6">
                 NexiOG didn't just build our platform; they engineered a highly scalable ecosystem that completely transformed how we do business globally.
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10" />
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative border-2 border-[#e65100]/50">
+                  <Image src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Client" fill className="object-cover" />
+                </div>
                 <div>
-                  <div className="text-sm font-bold">Enterprise Client</div>
-                  <div className="text-xs text-[#e65100]">Confidential Case Study</div>
+                  <div className="text-base font-bold text-white">Enterprise Client</div>
+                  <div className="text-sm text-[#e65100] tracking-wide">Confidential Case Study</div>
                 </div>
               </div>
             </MotionDiv>
@@ -335,31 +357,36 @@ export default function ContactPage() {
       </section>
 
       {/* Others vs Us Comparison */}
-      <section className="py-20 px-6 relative max-w-7xl mx-auto mb-12">
-        <div className="text-center mb-16">
-          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
+      <section className="py-32 px-6 relative max-w-7xl mx-auto mb-12">
+        <div className="text-center mb-20">
+          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#e65100] bg-[#e65100]/10 border border-[#e65100]/20 rounded-full mb-6 inline-block">
             The Difference
           </span>
           <MotionH2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-extrabold tracking-tight"
+            className="text-4xl md:text-6xl font-extrabold tracking-tight"
           >
-            Traditional Agencies <span className="text-white/40 italic font-light">vs</span> <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">NexiOG</span>
+            Traditional Agencies <span className="text-white/30 italic font-light mx-2">vs</span> <span className="bg-gradient-to-br from-[#e65100] to-orange-400 bg-clip-text text-transparent">NexiOG</span>
           </MotionH2>
         </div>
 
         <MotionDiv 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-3xl overflow-hidden shadow-2xl"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
           {/* Traditional Agencies Column */}
-          <div className="bg-[#0a0514] p-8 md:p-12 flex flex-col gap-6">
-            <h3 className="text-xl font-bold text-white/50 mb-2">Traditional Agencies</h3>
-            <ul className="space-y-4">
+          <div className="bg-[#050505] border border-white/5 p-8 md:p-12 rounded-[2rem] flex flex-col gap-8 opacity-80 scale-95 lg:origin-right">
+            <div className="flex items-center gap-4 border-b border-white/5 pb-6">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
+                <span className="text-white/30 text-xl">🏛️</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white/50">Traditional Agencies</h3>
+            </div>
+            <ul className="space-y-6">
               {[
                 "Use bloated, pre-built templates",
                 "Hidden fees and unclear pricing",
@@ -368,19 +395,29 @@ export default function ContactPage() {
                 "Outdated tech stacks (WordPress, jQuery)",
                 "Launch and abandon"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-white/50">
-                  <span className="text-red-500 font-bold text-lg mt-[-2px]">✕</span>
-                  <span className="text-base">{item}</span>
+                <li key={i} className="flex items-start gap-5 text-white/40">
+                  <span className="text-red-500/50 font-bold text-xl mt-[-2px]">✕</span>
+                  <span className="text-lg leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* NexiOG Column */}
-          <div className="bg-gradient-to-br from-[#1a0b2e] to-[#0a0514] p-8 md:p-12 flex flex-col gap-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
-            <h3 className="text-xl font-bold text-white mb-2">NexiOG Technologies</h3>
-            <ul className="space-y-4">
+          <div className="relative p-8 md:p-12 rounded-[2rem] flex flex-col gap-8 shadow-[0_0_100px_rgba(230,81,0,0.15)] border border-[#e65100]/30 overflow-hidden transform lg:-translate-x-4 z-10 bg-[#0a0514]">
+            {/* Background Image & Gradient overlay */}
+            <Image src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Tech Background" fill className="object-cover opacity-10 mix-blend-luminosity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0514]/90 via-[#0a0514]/95 to-[#e65100]/10" />
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#e65100]/20 rounded-full blur-[100px]" />
+            
+            <div className="relative z-10 flex items-center gap-4 border-b border-white/10 pb-6">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#e65100] to-orange-600 flex items-center justify-center shadow-[0_0_20px_rgba(230,81,0,0.4)]">
+                <span className="text-white font-bold text-xl">N</span>
+              </div>
+              <h3 className="text-3xl font-bold text-white">NexiOG Technologies</h3>
+            </div>
+            
+            <ul className="space-y-6 relative z-10">
               {[
                 "Bespoke, engineered-from-scratch architectures",
                 "100% transparent pricing and milestones",
@@ -389,9 +426,11 @@ export default function ContactPage() {
                 "Modern stacks (Next.js, React, Node.js)",
                 "Dedicated 24/7 post-launch SLA support"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-white">
-                  <span className="text-primary font-bold text-lg mt-[-2px]">✓</span>
-                  <span className="text-base font-medium">{item}</span>
+                <li key={i} className="flex items-start gap-5 text-white">
+                  <div className="w-6 h-6 rounded-full bg-[#e65100]/20 flex items-center justify-center flex-shrink-0 mt-[-2px]">
+                    <span className="text-[#e65100] font-bold text-sm">✓</span>
+                  </div>
+                  <span className="text-lg font-medium leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
