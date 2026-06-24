@@ -4,24 +4,33 @@ import { MotionDiv, MotionH2, MotionP } from "@/components/Motion";
 import Image from "next/image";
 
 const TECH_STACK = [
-  { name: "Codeigniter", color: "text-red-500" },
-  { name: "Laravel", color: "text-red-600" },
-  { name: "CSS3", color: "text-blue-500" },
-  { name: "Django", color: "text-green-700" },
-  { name: "Drupal", color: "text-blue-400" },
-  { name: "Express JS", color: "text-gray-300" },
-  { name: "Golang", color: "text-cyan-500" },
-  { name: "HTML5", color: "text-orange-500" },
-  { name: "Ionic", color: "text-blue-400" },
-  { name: "Java", color: "text-red-500" },
-  { name: "Kotlin", color: "text-purple-500" },
-  { name: "Magento", color: "text-orange-600" },
-  { name: "Node JS", color: "text-green-500" },
-  { name: "Phonegap", color: "text-gray-400" },
-  { name: "React JS", color: "text-cyan-400" },
-  { name: "Neto", color: "text-blue-500" },
-  { name: "Swift", color: "text-orange-400" },
-  { name: "Symfony", color: "text-black" },
+  { name: "React", src: "/tech-icons/react.svg" },
+  { name: "Next.js", src: "/tech-icons/nextdotjs.svg" },
+  { name: "Tailwind CSS", src: "/tech-icons/tailwindcss.svg" },
+  { name: "shadcn/ui", src: "/tech-icons/shadcnui.svg" },
+  { name: "Radix UI", src: "/tech-icons/radixui.svg" },
+  { name: "CSS3", src: "/tech-icons/css3.svg" },
+  { name: "React Query", src: "/tech-icons/reactquery.svg" },
+  { name: "Framer Motion", src: "/tech-icons/framer.svg" },
+  { name: "GSAP", src: "/tech-icons/greensock.svg" },
+  { name: "Node.js", src: "/tech-icons/nodedotjs.svg" },
+  { name: "TypeScript", src: "/tech-icons/typescript.svg" },
+  { name: "Bun", src: "/tech-icons/bun.svg" },
+  { name: "GraphQL", src: "/tech-icons/graphql.svg" },
+  { name: "tRPC", src: "/tech-icons/trpc.svg" },
+  { name: "Express", src: "/tech-icons/express.svg" },
+  { name: "Fastify", src: "/tech-icons/fastify.svg" },
+  { name: "PostgreSQL", src: "/tech-icons/postgresql.svg" },
+  { name: "MySQL", src: "/tech-icons/mysql.svg" },
+  { name: "MongoDB", src: "/tech-icons/mongodb.svg" },
+  { name: "Firebase", src: "/tech-icons/firebase.svg" },
+  { name: "Redis", src: "/tech-icons/redis.svg" },
+  { name: "Clerk", src: "/tech-icons/clerk.svg" },
+  { name: "Auth0", src: "/tech-icons/auth0.svg" },
+  { name: "JWT", src: "/tech-icons/jsonwebtokens.svg" },
+  { name: "AWS", src: "/tech-icons/amazonaws.svg" },
+  { name: "Vercel", src: "/tech-icons/vercel.svg" },
+  { name: "Docker", src: "/tech-icons/docker.svg" },
 ];
 
 export default function AboutPage() {
@@ -183,9 +192,9 @@ export default function AboutPage() {
                 transition={{ delay: idx * 0.05 }}
                 className="flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary/50 transition-all duration-300 group"
               >
-                {/* Generic placeholder for logo, using initial for now */}
-                <div className={`w-12 h-12 flex items-center justify-center rounded-xl bg-[#1a1a1a] mb-4 font-black text-xl shadow-inner group-hover:scale-110 transition-transform ${tech.color}`}>
-                  {tech.name.substring(0, 2).toUpperCase()}
+                {/* Tech Logo */}
+                <div className="w-12 h-12 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <img src={tech.src} alt={tech.name} className="w-10 h-10 object-contain opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-md" />
                 </div>
                 <span className="text-sm font-semibold text-white/80 group-hover:text-white">{tech.name}</span>
               </MotionDiv>
