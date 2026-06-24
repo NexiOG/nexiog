@@ -117,15 +117,12 @@ export default function AboutPage() {
 
             <MotionDiv initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 bg-[#110a1f] border border-white/10 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 text-[150px] font-black text-white/[0.03] leading-none select-none">2024</div>
-              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="relative z-10">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">The Journey Begins</h3>
                   <p className="text-white/70 leading-relaxed">
                     We started our journey presenting ourselves as a software development company capable of handling complex projects involving cutting-edge and challenging technologies. From day one, our mission was to engineer platforms that set new industry standards.
                   </p>
-                </div>
-                <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
-                  <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Office Start" fill className="object-cover" />
                 </div>
               </div>
             </MotionDiv>
