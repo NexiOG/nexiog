@@ -6,6 +6,7 @@ import { MotionDiv, MotionH2, MotionP } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
 import Magnetic from "@/components/ui/Magnetic";
 import Image from "next/image";
+import PageHero from "@/components/PageHero";
 
 const SERVICES = [
   "Web Development",
@@ -62,17 +63,15 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-white pb-32">
       
-      {/* Editorial Header */}
-      <section className="pt-40 pb-10 px-6 max-w-7xl mx-auto">
-        <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
-          <h1 className="text-[clamp(3rem,8vw,8rem)] font-black tracking-tighter leading-[0.9] mb-8">
-            Let's build <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">the future.</span>
-          </h1>
-          <p className="text-xl md:text-3xl font-light text-white/50 max-w-3xl leading-relaxed mb-16">
-            Whether you have a strict RFP or just a napkin sketch, our engineering team is ready to deliver world-class digital products.
-          </p>
-          
-          {/* Hero Banner Image */}
+      <PageHero 
+        title="Let's build the future." 
+        description="Whether you have a strict RFP or just a napkin sketch, our engineering team is ready to deliver world-class digital products."
+        hideButtons={true}
+      />
+      
+      {/* Hero Banner Image */}
+      <section className="px-6 max-w-7xl mx-auto -mt-10 mb-20 relative z-20">
+        <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}>
           <div className="w-full h-[300px] md:h-[500px] relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
             <Image 
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
