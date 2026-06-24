@@ -1,36 +1,126 @@
 import PageHero from "@/components/PageHero";
 import { TEAM } from "@/config/team";
-import { MotionDiv, MotionH2 } from "@/components/Motion";
+import { MotionDiv, MotionH2, MotionP } from "@/components/Motion";
 import Image from "next/image";
+
+const TECH_STACK = [
+  { name: "Codeigniter", color: "text-red-500" },
+  { name: "Laravel", color: "text-red-600" },
+  { name: "CSS3", color: "text-blue-500" },
+  { name: "Django", color: "text-green-700" },
+  { name: "Drupal", color: "text-blue-400" },
+  { name: "Express JS", color: "text-gray-300" },
+  { name: "Golang", color: "text-cyan-500" },
+  { name: "HTML5", color: "text-orange-500" },
+  { name: "Ionic", color: "text-blue-400" },
+  { name: "Java", color: "text-red-500" },
+  { name: "Kotlin", color: "text-purple-500" },
+  { name: "Magento", color: "text-orange-600" },
+  { name: "Node JS", color: "text-green-500" },
+  { name: "Phonegap", color: "text-gray-400" },
+  { name: "React JS", color: "text-cyan-400" },
+  { name: "Neto", color: "text-blue-500" },
+  { name: "Swift", color: "text-orange-400" },
+  { name: "Symfony", color: "text-black" },
+];
 
 export default function AboutPage() {
   return (
     <>
       <PageHero 
         title="About NexiOG" 
-        description="We are a team of visionary engineers, designers, and strategists dedicated to building high-performance digital platforms that dominate the market."
+        description="NexiOG Technologies, founded in 2011, is a software development company that provides cutting-edge technology and software solutions to global businesses. We have a solution for all your business needs, from IT consulting to design and development, quality assurance, and digital marketing."
       />
 
-      {/* Nexto-style Split About Section */}
+      {/* Founders Message Section */}
       <section className="py-24 px-6 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10">
-              <Image 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-                alt="Engineering Team"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+              Creating exceptional digital solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">innovative businesses.</span>
+            </h2>
+            <div className="space-y-6 text-lg text-white/70 leading-relaxed mb-8">
+              <p>
+                Our company, NexiOG Technologies, is an outcome of an entrepreneur's dream to become the world's most trusted provider of software solutions. Since 2011, we have worked tirelessly with our entire team of talented employees to keep NexiOG Technologies at the forefront of the software solutions industry.
+              </p>
+              <p>
+                Our urge to build a large, rapidly growing company drives us. Besides, NexiOG Technologies is more than just impressive numbers; it is the accumulation of our ambition, creativity, and technical expertise. We believe that every business is driven by purpose and core values. Our ideas and mission are reflected not only in our work but also in our workplace culture.
+              </p>
+              <p>
+                NexiOG Technologies is, at its core, a technologically advanced, people-centric, ambitious, and customer-focused company. It is founded on the business principles that we, as a company, look up to.
+              </p>
             </div>
-            {/* Decorative element behind image */}
+            
+            <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl w-fit">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold text-xl">
+                CF
+              </div>
+              <div>
+                <h4 className="font-bold text-white">Co-Founders</h4>
+                <p className="text-sm text-primary">NexiOG Technologies</p>
+              </div>
+            </div>
+          </MotionDiv>
+
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[600px]">
+            {/* Grid of images composition */}
+            <div className="absolute top-0 right-0 w-[80%] h-[70%] rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10">
+              <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" fill className="object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 w-[60%] h-[50%] rounded-3xl overflow-hidden border-4 border-[#050505] shadow-2xl z-20">
+              <Image src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Team Meeting" fill className="object-cover" />
+            </div>
             <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
           </MotionDiv>
-          
-          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-24 px-6 relative border-y border-white/5 bg-[#0a0514]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-bold mb-4">
+              Established in 2011, NexiOG Technologies has been offering world-class information technology services
+            </MotionH2>
+          </div>
+
+          <div className="relative mt-20">
+            {/* Minimalist Timeline Representation */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 relative z-10">
+              {[2011, 2013, 2015, 2017, 2020, "Present"].map((year, i) => (
+                <div key={i} className="flex flex-col items-center group relative">
+                  <div className="w-4 h-4 rounded-full bg-white/20 border-2 border-[#0a0514] z-10 group-hover:bg-primary transition-colors duration-300" />
+                  <span className="mt-4 font-bold text-white/50 group-hover:text-white transition-colors duration-300">{year}</span>
+                  {/* Connectors (hidden on mobile, absolute positioned) */}
+                  {i < 5 && <div className="hidden md:block absolute top-2 left-1/2 w-[calc(100%+2rem)] h-[1px] bg-white/10 -z-10 group-hover:bg-primary/50 transition-colors duration-300" />}
+                </div>
+              ))}
+            </div>
+
+            <MotionDiv initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 bg-[#110a1f] border border-white/10 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-[150px] font-black text-white/[0.03] leading-none select-none">2011</div>
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">The Journey Begins</h3>
+                  <p className="text-white/70 leading-relaxed">
+                    We started our journey presenting ourselves as a software development company capable of handling complex projects involving cutting-edge and challenging technologies. From day one, our mission was to engineer platforms that set new industry standards.
+                  </p>
+                </div>
+                <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
+                  <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Office Start" fill className="object-cover" />
+                </div>
+              </div>
+            </MotionDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* Existing Nexto-style Split About Section */}
+      <section className="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
-              About Company
+              Why Us
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
               We Execute <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Digital Excellence.</span>
@@ -57,38 +147,150 @@ export default function AboutPage() {
               ))}
             </div>
           </MotionDiv>
-        </div>
-      </section>
 
-      {/* Stats Section - Nexto Style */}
-      <section className="py-16 px-6 bg-[#0a0514] border-y border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
-          <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-2">10<span className="text-primary">+</span></h3>
-            <p className="text-sm uppercase tracking-widest text-white/50 font-bold">Years Exp</p>
-          </MotionDiv>
-          <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-2">500<span className="text-primary">+</span></h3>
-            <p className="text-sm uppercase tracking-widest text-white/50 font-bold">Projects</p>
-          </MotionDiv>
-          <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-2">99<span className="text-primary">%</span></h3>
-            <p className="text-sm uppercase tracking-widest text-white/50 font-bold">Retention</p>
-          </MotionDiv>
-          <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-2">50<span className="text-primary">+</span></h3>
-            <p className="text-sm uppercase tracking-widest text-white/50 font-bold">Experts</p>
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10">
+              <Image 
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80"
+                alt="Engineering Team"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+            </div>
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/20 rounded-full blur-[80px] -z-10" />
           </MotionDiv>
         </div>
       </section>
 
-      {/* Why Choose Us / Core Values - Nexto Grid */}
-      <section className="py-32 px-6 relative">
+      {/* Tech Stack Grid */}
+      <section className="py-24 px-6 bg-[#0a0514] border-y border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-5xl font-bold mb-6">
+            Technologies and Platforms <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">That We Work With</span>
+          </MotionH2>
+          <MotionP initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/60 max-w-3xl mx-auto mb-16 text-lg">
+            NexiOG Technologies has skillfully mastered the art of creating superior and feature-rich software, web, and mobile apps. Our team of developers has profound knowledge and first-hand experience in using the latest frameworks and trending technologies.
+          </MotionP>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 md:gap-8">
+            {TECH_STACK.map((tech, idx) => (
+              <MotionDiv 
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary/50 transition-all duration-300 group"
+              >
+                {/* Generic placeholder for logo, using initial for now */}
+                <div className={`w-12 h-12 flex items-center justify-center rounded-xl bg-[#1a1a1a] mb-4 font-black text-xl shadow-inner group-hover:scale-110 transition-transform ${tech.color}`}>
+                  {tech.name.substring(0, 2).toUpperCase()}
+                </div>
+                <span className="text-sm font-semibold text-white/80 group-hover:text-white">{tech.name}</span>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6-Panel Statistical Overview */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black -z-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(129,74,200,0.15),transparent_50%)] -z-10" />
+        
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+              Statistical Overview of our Company
+            </h2>
+            <p className="text-lg text-white/60 leading-relaxed mb-6">
+              Since our inception, we have rapidly grown to become one of the most trusted software solution providers in the industry. While the numbers are currently as stated, we are confident that with our continued efforts, they will grow into much bigger and better numbers.
+            </p>
+          </MotionDiv>
+
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {/* Stats Cards */}
+            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
+              <div className="text-3xl font-black text-white mb-2">2011</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Established</div>
+            </div>
+            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
+              <div className="text-3xl font-black text-white mb-2">75+</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Team Member</div>
+            </div>
+            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
+              <div className="text-3xl font-black text-white mb-2">1280</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Completed Project</div>
+            </div>
+            <div className="bg-gradient-to-br from-primary to-secondary p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-2xl shadow-primary/20 transform md:scale-110 z-10">
+              <div className="text-4xl font-black text-white mb-2 drop-shadow-md">392</div>
+              <div className="text-sm text-white/90 uppercase tracking-wider font-bold drop-shadow-sm">Happy Client</div>
+            </div>
+            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
+              <div className="text-3xl font-black text-white mb-2">30% Plus</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">YOY Revenue Growth</div>
+            </div>
+            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
+              <div className="text-3xl font-black text-white mb-2">250+</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider font-bold mb-2">Five Star Reviews</div>
+              <div className="flex gap-2 text-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+          </MotionDiv>
+        </div>
+      </section>
+
+      {/* How We Help Our Customers */}
+      <section className="py-32 px-6 bg-[#050505] relative z-10">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+            How We Help Our Customers
+          </MotionH2>
+        </div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { title: "Communication", img: "/images/communication_card.png" },
+            { title: "Transparency", img: "/images/transparency_card.png" },
+            { title: "Focus On Results", img: "/images/results_card.png" },
+            { title: "Support", img: "/images/support_card.png" }
+          ].map((card, idx) => (
+            <MotionDiv 
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="group relative h-[400px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            >
+              <Image 
+                src={card.img} 
+                alt={card.title} 
+                fill 
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 w-full p-8">
+                <div className="w-10 h-10 mb-4 rounded-lg bg-primary/20 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-primary transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+              </div>
+            </MotionDiv>
+          ))}
+        </div>
+      </section>
+
+      {/* Existing Why Choose Us / Core Values - Nexto Grid */}
+      <section className="py-32 px-6 relative border-t border-white/5">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.05)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
-              Why Choose Us
+              Core Principles
             </span>
             <MotionH2 
               initial={{ opacity: 0, y: 30 }}
@@ -125,7 +327,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Existing Team Section */}
       <section className="py-32 px-6 max-w-7xl mx-auto border-t border-white/5">
         <div className="text-center mb-20">
           <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
