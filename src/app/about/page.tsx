@@ -212,6 +212,117 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Others vs Us Comparison */}
+      <section className="py-24 px-6 relative border-y border-white/5 bg-[#050505]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
+              The Difference
+            </span>
+            <MotionH2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[clamp(2.5rem,4vw,3.5rem)] font-extrabold tracking-tight"
+            >
+              Traditional Agencies <span className="text-white/40 italic font-light">vs</span> <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">NexiOG</span>
+            </MotionH2>
+          </div>
+
+          <MotionDiv 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-3xl overflow-hidden shadow-2xl"
+          >
+            {/* Traditional Agencies Column */}
+            <div className="bg-[#0a0514] p-10 md:p-16 flex flex-col gap-8">
+              <h3 className="text-2xl font-bold text-white/50 mb-4">Traditional Agencies</h3>
+              <ul className="space-y-6">
+                {[
+                  "Use bloated, pre-built templates",
+                  "Hidden fees and unclear pricing",
+                  "Slow, monolithic development cycles",
+                  "Pass you off to junior developers",
+                  "Outdated tech stacks (WordPress, jQuery)",
+                  "Launch and abandon"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 text-white/50">
+                    <span className="text-red-500 font-bold text-xl mt-[-2px]">✕</span>
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* NexiOG Column */}
+            <div className="bg-gradient-to-br from-[#1a0b2e] to-[#0a0514] p-10 md:p-16 flex flex-col gap-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
+              <h3 className="text-2xl font-bold text-white mb-4">NexiOG Technologies</h3>
+              <ul className="space-y-6">
+                {[
+                  "Bespoke, engineered-from-scratch architectures",
+                  "100% transparent pricing and milestones",
+                  "Agile, rapid CI/CD deployment pipelines",
+                  "Top 1% senior engineering talent",
+                  "Modern stacks (Next.js, React, Node.js)",
+                  "Dedicated 24/7 post-launch SLA support"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 text-white">
+                    <span className="text-primary font-bold text-xl mt-[-2px]">✓</span>
+                    <span className="text-lg font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </MotionDiv>
+        </div>
+      </section>
+
+      {/* Industries We Serve - Global Footprint */}
+      <section className="py-24 px-6 relative bg-[#0a0514]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <MotionDiv 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="w-full md:w-1/3"
+            >
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                Global Footprint & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Capability.</span>
+              </h2>
+              <p className="text-lg text-white/60 leading-relaxed mb-8">
+                We don't just work in one vertical. Our engineering teams have deep domain expertise across multiple global industries, delivering compliant and secure platforms for enterprise clients worldwide.
+              </p>
+            </MotionDiv>
+            
+            <div className="w-full md:w-2/3 grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {[
+                { name: "FinTech & Banking", icon: "💰" },
+                { name: "Healthcare & Telemed", icon: "⚕️" },
+                { name: "E-Commerce & Retail", icon: "🛍️" },
+                { name: "EdTech & eLearning", icon: "📚" },
+                { name: "Real Estate & PropTech", icon: "🏢" },
+                { name: "Logistics & Supply Chain", icon: "🚚" },
+              ].map((industry, i) => (
+                <MotionDiv 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="text-3xl mb-4">{industry.icon}</div>
+                  <h4 className="text-lg font-bold text-white">{industry.name}</h4>
+                </MotionDiv>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 6-Panel Statistical Overview - Minimalist Redesign */}
       <section className="py-32 px-6 relative border-y border-white/5 bg-[#050505]">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.05)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
