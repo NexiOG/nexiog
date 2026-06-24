@@ -77,15 +77,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[clamp(1.8rem,7vw,5.5rem)] font-extrabold leading-[1.08] mb-4 md:mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold leading-tight md:leading-[1.08] mb-4 md:mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)] px-2"
             >
-              We Engineer the Tech. <span className="block md:inline mt-2 md:mt-0">You Capture the Market</span>
+              We Engineer the Tech. <span className="block mt-2 md:mt-0">You Capture the Market</span>
             </MotionH1>
             <MotionP 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(0.875rem,2.5vw,1.25rem)] text-white drop-shadow-lg mb-6 md:mb-10 max-w-2xl mx-auto leading-[1.6] md:leading-[1.8] font-medium tracking-normal px-2 sm:px-4"
+              className="text-base sm:text-lg md:text-[1.25rem] text-white/90 md:text-white drop-shadow-lg mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed md:leading-[1.8] font-medium tracking-normal px-4"
             >
               From Concept to Launch: We Build High-Performance Websites and Custom Software Solutions That Drive Business Growth.
             </MotionP>
@@ -93,11 +93,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 pointer-events-auto px-4 sm:px-6 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row justify-center items-center gap-4 pointer-events-auto px-6 w-full max-w-xs sm:max-w-none mx-auto"
             >
               {/* Primary 3D Button */}
-              <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "group relative overflow-hidden" })}>
-                <span className="relative flex items-center gap-2 drop-shadow-md tracking-wide">
+              <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "w-full sm:w-auto group relative overflow-hidden" })}>
+                <span className="relative flex items-center gap-2 drop-shadow-md tracking-wide justify-center w-full">
                   Get in touch
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                     <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -106,8 +106,8 @@ export default function Home() {
               </Link>
 
               {/* Secondary 3D Glass Button */}
-              <Link href="#services" className={buttonVariants({ variant: "secondary", size: "lg", className: "group relative overflow-hidden" })}>
-                <span className="relative flex items-center gap-2 tracking-wide text-white/90 group-hover:text-white transition-colors">
+              <Link href="#services" className={buttonVariants({ variant: "secondary", size: "lg", className: "w-full sm:w-auto group relative overflow-hidden" })}>
+                <span className="relative flex items-center justify-center w-full gap-2 tracking-wide text-white/90 group-hover:text-white transition-colors">
                   View services
                 </span>
               </Link>
@@ -164,9 +164,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(2.2rem,7vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] font-extrabold text-center tracking-tighter leading-tight md:leading-[1] text-white relative z-10"
           >
-            Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">Digital Services</span>
+            Core <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">Digital Services</span>
           </MotionH2>
         </div>
         <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-32">
@@ -183,8 +183,8 @@ export default function Home() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="w-full md:w-1/2"
                 >
-                  <div className="relative w-full aspect-[4/3] rounded-[2rem] border border-white/10 bg-[#050505] p-2 hover-3d-shine shadow-2xl">
-                    <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-black/50">
+                  <div className="relative w-full aspect-video md:aspect-[4/3] rounded-2xl md:rounded-[2rem] border border-white/10 bg-[#050505] p-2 hover-3d-shine shadow-2xl">
+                    <div className="relative w-full h-full rounded-xl md:rounded-[1.5rem] overflow-hidden bg-black/50">
                       <Image 
                         src={service.mockupImage!} 
                         alt={service.title} 
@@ -202,27 +202,27 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                  className="w-full md:w-1/2 flex flex-col items-start"
+                  className="w-full md:w-1/2 flex flex-col items-start px-2 sm:px-0"
                 >
                   {/* Badge */}
-                  <div className="px-4 py-1.5 rounded-lg border border-white/10 bg-transparent text-sm font-semibold text-white/90 mb-6">
+                  <div className="px-3 md:px-4 py-1.5 rounded-lg border border-white/10 bg-transparent text-xs md:text-sm font-semibold text-white/90 mb-4 md:mb-6">
                     {service.badge}
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                  <h3 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white mb-4 leading-tight md:leading-[1.1] tracking-tight">
                     {service.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-[0.95rem] md:text-[1.1rem] lg:text-[1.2rem] text-muted-foreground leading-relaxed mb-6 md:mb-10 max-w-lg">
+                  <p className="text-base md:text-lg lg:text-[1.2rem] text-muted-foreground leading-relaxed mb-6 md:mb-10 max-w-lg">
                     {service.description}
                   </p>
                   
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 md:gap-3">
                     {service.tags?.map(tag => (
-                      <span key={tag} className="px-3 md:px-5 py-2 md:py-2.5 rounded-lg border border-white/10 bg-[#0a0a0a] text-xs md:text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-white transition-colors cursor-default shadow-sm">
+                      <span key={tag} className="px-3 md:px-5 py-1.5 md:py-2.5 rounded-lg border border-white/10 bg-[#0a0a0a] text-xs md:text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-white transition-colors cursor-default shadow-sm">
                         {tag}
                       </span>
                     ))}
@@ -272,7 +272,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[clamp(2rem,7vw,6rem)] font-extrabold text-center tracking-tighter leading-[1] text-white relative z-10 mb-6 md:mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] font-extrabold text-center tracking-tighter leading-tight md:leading-[1] text-white relative z-10 mb-6 md:mb-8"
           >
             A Proven Process for<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">Exceptional Results</span>
           </MotionH2>
@@ -295,7 +295,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative flex flex-col justify-end bg-[#080414] border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#8b5cf6]/40 transition-all duration-700 hover-3d-shine shadow-2xl min-h-[320px] md:min-h-[420px] p-6 md:p-10 ${step.colSpan}`}
+              className={`group relative flex flex-col justify-end bg-[#080414] border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#8b5cf6]/40 transition-all duration-700 hover-3d-shine shadow-2xl min-h-[250px] md:min-h-[420px] p-6 md:p-10 ${step.colSpan}`}
             >
               {/* Background Image with Gradient Overlay */}
               <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
@@ -370,9 +370,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(2rem,6vw,5rem)] font-extrabold text-white leading-[1.05] tracking-tighter mb-6 md:mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-white leading-tight md:leading-[1.05] tracking-tighter mb-6 md:mb-8"
           >
-            Smart web solutions built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">your success</span>
+            Smart web solutions built for <span className="block md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">your success</span>
           </MotionH2>
 
         </div>
@@ -398,7 +398,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12 w-full"
             >
               {/* Card 1 */}
               <MotionDiv 
@@ -434,9 +434,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center gap-4 md:gap-8"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8 w-full"
             >
-              <Link href="/contact" className={buttonVariants({ variant: "accent", className: "group relative overflow-hidden gap-2 px-10" })}>
+              <Link href="/contact" className={buttonVariants({ variant: "accent", className: "group w-full sm:w-auto justify-center relative overflow-hidden gap-2 px-10" })}>
                 Contact Us Now
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                   <path d="M7 17L17 7M17 7H7M17 7V17" />
@@ -444,7 +444,7 @@ export default function Home() {
               </Link>
 
               <a href="tel:+917980888810" className="flex items-center gap-4 group cursor-pointer transition-all">
-                <div className="w-12 h-12 rounded-full bg-[#1c1c1c] flex items-center justify-center border border-white/10 shadow-md group-hover:bg-[#e34a2e]/10 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-[#1c1c1c] flex items-center justify-center border border-white/10 shadow-md group-hover:bg-[#e34a2e]/10 transition-colors shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e34a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div>
@@ -496,13 +496,13 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(2.5rem,4vw,4rem)] md:text-[clamp(3.5rem,5vw,5rem)] font-extrabold text-white leading-[1] tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-white leading-tight md:leading-[1] tracking-tighter"
           >
-            A showcase of visionary digital products <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">crafted to inspire & engage</span>
+            A showcase of visionary digital products <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">crafted to inspire & engage</span>
           </MotionH2>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 overflow-hidden h-[500px] md:h-[800px] rounded-2xl md:rounded-[3rem] border border-white/10 bg-[#0a0514]/50 backdrop-blur-sm shadow-2xl">
+        <div className="max-w-7xl mx-auto relative z-10 overflow-hidden h-[600px] md:h-[800px] rounded-2xl md:rounded-[3rem] border border-white/10 bg-[#0a0514]/50 backdrop-blur-sm shadow-2xl">
           {/* Fading Edges for the marquee */}
           <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#0a0514] to-transparent z-20 pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0514] to-transparent z-20 pointer-events-none" />
@@ -633,9 +633,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(2.5rem,4vw,4rem)] md:text-[clamp(3.5rem,5vw,5rem)] font-extrabold text-white leading-[1] tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-white leading-tight md:leading-[1] tracking-tighter"
           >
-            Core features that drive <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">digital excellence</span>
+            Core features that drive <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e2e8f0] via-[#7e57c2] to-[#ce93d8]">digital excellence</span>
           </MotionH2>
         </div>
 
