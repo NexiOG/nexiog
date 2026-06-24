@@ -14,15 +14,36 @@ export default function Footer() {
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 250px)'
         }}
       >
+        {/* Desktop Video Background */}
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
         >
           <source src="/video/footer%20background.mp4" type="video/mp4" />
         </video>
+
+        {/* Mobile Animated Image Background */}
+        <div className="block md:hidden absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none overflow-hidden">
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes cinematic-pan {
+              0% { transform: scale(1.05) translate(0, 0); }
+              50% { transform: scale(1.2) translate(-2%, 3%); }
+              100% { transform: scale(1.05) translate(2%, -3%); }
+            }
+            .animate-cinematic-pan {
+              animation: cinematic-pan 25s ease-in-out infinite alternate;
+            }
+          `}} />
+          <Image 
+            src="/images/mobile_footer_bg.png"
+            alt="Mobile Footer Background"
+            fill
+            className="object-cover animate-cinematic-pan"
+          />
+        </div>
         <Particles />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-[800px] h-[800px] rounded-full mix-blend-screen bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.3)_0%,rgba(0,0,0,0)_60%)]" />
