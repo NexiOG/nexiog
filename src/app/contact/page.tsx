@@ -66,7 +66,7 @@ export default function ContactPage() {
       <section className="pt-40 pb-10 px-6 max-w-7xl mx-auto">
         <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
           <h1 className="text-[clamp(3rem,8vw,8rem)] font-black tracking-tighter leading-[0.9] mb-8">
-            Let's build <br/><span className="text-[#e65100]">the future.</span>
+            Let's build <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">the future.</span>
           </h1>
           <p className="text-xl md:text-3xl font-light text-white/50 max-w-3xl leading-relaxed mb-16">
             Whether you have a strict RFP or just a napkin sketch, our engineering team is ready to deliver world-class digital products.
@@ -110,7 +110,7 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold tracking-tight mb-8">Global Operations</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-[#e65100] mb-2">India HQ</h4>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-2">India HQ</h4>
                   <p className="text-sm text-white/70 mb-2">Development & Operations Hub</p>
                   <a href="mailto:nexiogtechnologies@gmail.com" className="text-lg hover:text-white transition-colors block mb-1 border-b border-white/10 w-fit pb-1">nexiogtechnologies@gmail.com</a>
                   <a href="tel:+917980888810" className="text-lg hover:text-white transition-colors border-b border-white/10 w-fit pb-1">+91 79808 88810</a>
@@ -141,19 +141,19 @@ export default function ContactPage() {
                 fill 
                 className="object-cover opacity-20 group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0a0514]/90 to-[#e65100]/20" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0a0514]/90 to-primary/20" />
               
-              <div className="absolute top-6 left-8 text-7xl text-[#e65100]/40 font-serif leading-none">"</div>
+              <div className="absolute top-6 left-8 text-7xl text-primary/40 font-serif leading-none">"</div>
               <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white relative z-10 mb-8 pt-6">
                 NexiOG didn't just build our platform; they engineered a highly scalable ecosystem that completely transformed how we do business globally.
               </p>
               <div className="flex items-center gap-4 relative z-10">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative border-2 border-[#e65100]/50">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative border-2 border-primary/50">
                   <Image src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Client" fill className="object-cover" />
                 </div>
                 <div>
                   <div className="text-base font-bold text-white">Enterprise Client</div>
-                  <div className="text-sm text-[#e65100] tracking-wide">Confidential Case Study</div>
+                  <div className="text-sm text-secondary tracking-wide">Confidential Case Study</div>
                 </div>
               </div>
             </MotionDiv>
@@ -163,7 +163,7 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold tracking-tight mb-8">The Process</h3>
               <div className="flex flex-col gap-8 relative border-l border-white/10 ml-3 pl-8">
                 <div className="relative">
-                  <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-[#e65100]" />
+                  <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-primary" />
                   <h4 className="text-xl font-bold mb-2">1. Discovery Call (24hrs)</h4>
                   <p className="text-white/50 leading-relaxed">We schedule a 30-minute introductory call to understand your vision, requirements, and technical constraints.</p>
                 </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                   <div key={i} className="border-b border-white/10">
                     <button 
                       onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                      className="w-full py-6 flex justify-between items-center text-left hover:text-[#e65100] transition-colors"
+                      className="w-full py-6 flex justify-between items-center text-left hover:text-primary transition-colors"
                     >
                       <span className="text-lg font-bold pr-8">{faq.q}</span>
                       <span className="text-2xl font-light text-white/30">{activeFaq === i ? "−" : "+"}</span>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                         onClick={() => toggleService(service)}
                         className={`px-3 py-1.5 rounded-full border text-sm transition-all duration-300 ${
                           selectedServices.includes(service) 
-                            ? "border-[#e65100] bg-[#e65100]/10 text-white font-bold" 
+                            ? "border-primary bg-primary/10 text-white font-bold" 
                             : "border-white/10 text-white/50 hover:border-white/30 hover:text-white"
                         }`}
                       >
@@ -249,22 +249,22 @@ export default function ContactPage() {
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({...formState, name: e.target.value})}
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors peer placeholder-transparent" 
+                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors peer placeholder-transparent" 
                       placeholder="Name" 
                       id="name"
                     />
-                    <label htmlFor="name" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-[#e65100]">Full Name</label>
+                    <label htmlFor="name" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-primary">Full Name</label>
                   </div>
                   <div className="relative group">
                     <input 
                       type="text" 
                       value={formState.company}
                       onChange={(e) => setFormState({...formState, company: e.target.value})}
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors peer placeholder-transparent" 
+                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors peer placeholder-transparent" 
                       placeholder="Company" 
                       id="company"
                     />
-                    <label htmlFor="company" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-[#e65100]">Company Name</label>
+                    <label htmlFor="company" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-primary">Company Name</label>
                   </div>
                 </div>
 
@@ -275,22 +275,22 @@ export default function ContactPage() {
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({...formState, email: e.target.value})}
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors peer placeholder-transparent" 
+                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors peer placeholder-transparent" 
                       placeholder="Email" 
                       id="email"
                     />
-                    <label htmlFor="email" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-[#e65100]">Email Address</label>
+                    <label htmlFor="email" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-primary">Email Address</label>
                   </div>
                   <div className="relative group">
                     <input 
                       type="tel" 
                       value={formState.phone}
                       onChange={(e) => setFormState({...formState, phone: e.target.value})}
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors peer placeholder-transparent" 
+                      className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors peer placeholder-transparent" 
                       placeholder="Phone" 
                       id="phone"
                     />
-                    <label htmlFor="phone" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-[#e65100]">Phone Number</label>
+                    <label htmlFor="phone" className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:text-primary">Phone Number</label>
                   </div>
                 </div>
 
@@ -298,7 +298,7 @@ export default function ContactPage() {
                   <select 
                     value={formState.budget}
                     onChange={(e) => setFormState({...formState, budget: e.target.value})}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="bg-[#050505] text-white/50">Select Budget Range</option>
                     <option value="basic" className="bg-[#050505] text-white">₹15,999 - ₹19,999 (Basic)</option>
@@ -306,7 +306,7 @@ export default function ContactPage() {
                     <option value="pro" className="bg-[#050505] text-white">₹99,999 - ₹1,99,999 (Pro)</option>
                     <option value="custom" className="bg-[#050505] text-white">Custom Amount</option>
                   </select>
-                  <label className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-[#e65100]">Project Budget</label>
+                  <label className="absolute left-0 -top-5 text-xs font-bold uppercase tracking-widest text-primary">Project Budget</label>
                   <div className="absolute right-0 top-4 pointer-events-none text-white/50">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
                   </div>
@@ -318,11 +318,11 @@ export default function ContactPage() {
                     rows={1} 
                     value={formState.message}
                     onChange={(e) => setFormState({...formState, message: e.target.value})}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-[#e65100] transition-colors peer placeholder-transparent resize-none min-h-[100px]" 
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white focus:outline-none focus:border-primary transition-colors peer placeholder-transparent resize-none min-h-[100px]" 
                     placeholder="Message" 
                     id="message"
                   />
-                  <label htmlFor="message" className="absolute left-0 -top-1 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-1 peer-focus:text-xs peer-focus:uppercase peer-focus:text-[#e65100]">Project Details</label>
+                  <label htmlFor="message" className="absolute left-0 -top-1 text-xs font-bold uppercase tracking-widest text-white/40 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:top-3 peer-placeholder-shown:text-white/30 peer-placeholder-shown:normal-case peer-focus:-top-1 peer-focus:text-xs peer-focus:uppercase peer-focus:text-primary">Project Details</label>
                 </div>
                 
                 <div className="pt-8 flex flex-col gap-6">
@@ -356,19 +356,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Others vs Us Comparison */}
+      {/* Others vs Us Comparison - Professional Restyle */}
       <section className="py-32 px-6 relative max-w-7xl mx-auto mb-12">
-        <div className="text-center mb-20">
-          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#e65100] bg-[#e65100]/10 border border-[#e65100]/20 rounded-full mb-6 inline-block">
+        <div className="text-center mb-16">
+          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
             The Difference
           </span>
           <MotionH2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-extrabold tracking-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight"
           >
-            Traditional Agencies <span className="text-white/30 italic font-light mx-2">vs</span> <span className="bg-gradient-to-br from-[#e65100] to-orange-400 bg-clip-text text-transparent">NexiOG</span>
+            Traditional Agencies <span className="text-white/30 italic font-light mx-2">vs</span> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">NexiOG</span>
           </MotionH2>
         </div>
 
@@ -376,64 +376,68 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+          className="bg-[#050505] border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl"
         >
-          {/* Traditional Agencies Column */}
-          <div className="bg-[#050505] border border-white/5 p-8 md:p-12 rounded-[2rem] flex flex-col gap-8 opacity-80 scale-95 lg:origin-right">
-            <div className="flex items-center gap-4 border-b border-white/5 pb-6">
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
-                <span className="text-white/30 text-xl">🏛️</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {/* Traditional Agencies Column */}
+            <div className="p-8 md:p-12 lg:p-16 flex flex-col gap-8 bg-black/40">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                  <span className="text-white/30 text-xl font-serif">A</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white/50">Typical Agency</h3>
               </div>
-              <h3 className="text-2xl font-bold text-white/50">Traditional Agencies</h3>
+              <ul className="space-y-6">
+                {[
+                  "Use bloated, pre-built templates",
+                  "Hidden fees and unclear pricing",
+                  "Slow, monolithic development cycles",
+                  "Pass you off to junior developers",
+                  "Outdated tech stacks (WordPress, jQuery)",
+                  "Launch and abandon"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-5 text-white/40">
+                    <svg className="w-6 h-6 text-red-500/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-lg leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-6">
-              {[
-                "Use bloated, pre-built templates",
-                "Hidden fees and unclear pricing",
-                "Slow, monolithic development cycles",
-                "Pass you off to junior developers",
-                "Outdated tech stacks (WordPress, jQuery)",
-                "Launch and abandon"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-5 text-white/40">
-                  <span className="text-red-500/50 font-bold text-xl mt-[-2px]">✕</span>
-                  <span className="text-lg leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          {/* NexiOG Column */}
-          <div className="relative p-8 md:p-12 rounded-[2rem] flex flex-col gap-8 shadow-[0_0_100px_rgba(230,81,0,0.15)] border border-[#e65100]/30 overflow-hidden transform lg:-translate-x-4 z-10 bg-[#0a0514]">
-            {/* Background Image & Gradient overlay */}
-            <Image src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Tech Background" fill className="object-cover opacity-10 mix-blend-luminosity" />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0514]/90 via-[#0a0514]/95 to-[#e65100]/10" />
-            <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#e65100]/20 rounded-full blur-[100px]" />
-            
-            <div className="relative z-10 flex items-center gap-4 border-b border-white/10 pb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#e65100] to-orange-600 flex items-center justify-center shadow-[0_0_20px_rgba(230,81,0,0.4)]">
-                <span className="text-white font-bold text-xl">N</span>
-              </div>
-              <h3 className="text-3xl font-bold text-white">NexiOG Technologies</h3>
-            </div>
-            
-            <ul className="space-y-6 relative z-10">
-              {[
-                "Bespoke, engineered-from-scratch architectures",
-                "100% transparent pricing and milestones",
-                "Agile, rapid CI/CD deployment pipelines",
-                "Top 1% senior engineering talent",
-                "Modern stacks (Next.js, React, Node.js)",
-                "Dedicated 24/7 post-launch SLA support"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-5 text-white">
-                  <div className="w-6 h-6 rounded-full bg-[#e65100]/20 flex items-center justify-center flex-shrink-0 mt-[-2px]">
-                    <span className="text-[#e65100] font-bold text-sm">✓</span>
+            {/* NexiOG Column */}
+            <div className="relative p-8 md:p-12 lg:p-16 flex flex-col gap-8 bg-gradient-to-br from-[#0a0514] to-[#1a0b2e] overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none" />
+              
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary p-[1px] shadow-[0_0_20px_rgba(129,74,200,0.3)]">
+                  <div className="w-full h-full rounded-full bg-[#0a0514] flex items-center justify-center">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold text-xl">N</span>
                   </div>
-                  <span className="text-lg font-medium leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
+                </div>
+                <h3 className="text-2xl font-bold text-white">NexiOG</h3>
+              </div>
+              
+              <ul className="space-y-6 relative z-10">
+                {[
+                  "Bespoke, engineered-from-scratch architectures",
+                  "100% transparent pricing and milestones",
+                  "Agile, rapid CI/CD deployment pipelines",
+                  "Top 1% senior engineering talent",
+                  "Modern stacks (Next.js, React, Node.js)",
+                  "Dedicated 24/7 post-launch SLA support"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-5 text-white">
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-lg font-medium leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </MotionDiv>
       </section>
