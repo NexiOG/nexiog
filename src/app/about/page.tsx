@@ -506,7 +506,7 @@ export default function AboutPage() {
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                  <h3 className={`text-4xl md:text-5xl lg:text-6xl font-normal text-[#e65100] tracking-tight ${poppins.className}`}>
+                  <h3 className={`text-3xl md:text-4xl xl:text-5xl font-normal text-[#e65100] tracking-tight whitespace-nowrap ${poppins.className}`}>
                     {member.name}
                   </h3>
                 </div>
