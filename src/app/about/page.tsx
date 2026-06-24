@@ -206,61 +206,66 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6-Panel Statistical Overview */}
-      <section className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black -z-20" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(129,74,200,0.15),transparent_50%)] -z-10" />
+      {/* 6-Panel Statistical Overview - Minimalist Redesign */}
+      <section className="py-32 px-6 relative border-y border-white/5 bg-[#050505]">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,rgba(129,74,200,0.05)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="w-full lg:w-1/3">
+            <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
+              Our Growth
+            </span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-              Statistical Overview of our Company
+              By the numbers.
             </h2>
-            <p className="text-lg text-white/60 leading-relaxed mb-6">
-              Since our inception, we have rapidly grown to become one of the most trusted software solution providers in the industry. While the numbers are currently as stated, we are confident that with our continued efforts, they will grow into much bigger and better numbers.
+            <p className="text-lg text-white/60 leading-relaxed">
+              Since our inception in 2024, we have rapidly grown to become one of the most trusted software solution providers. Our metrics reflect our relentless pursuit of excellence and client satisfaction.
             </p>
           </MotionDiv>
 
-          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {/* Modern Bento-style Stats Cards */}
-            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">2024</div>
-              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Established</div>
-            </div>
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16">
             
-            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">25</div>
-              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Team Members</div>
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-white/5 group-hover:bg-primary transition-colors duration-500 hidden sm:block" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">2024</div>
+              <div className="text-sm text-white/50 uppercase tracking-[0.2em] font-bold">Established</div>
             </div>
-            
-            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">100<span className="text-primary">+</span></div>
-              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Projects</div>
+
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-white/5 group-hover:bg-primary transition-colors duration-500 hidden sm:block" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">25</div>
+              <div className="text-sm text-white/50 uppercase tracking-[0.2em] font-bold">Team Members</div>
             </div>
-            
-            <div className="relative p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square overflow-hidden transform md:scale-110 z-10 group shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)] border border-primary/50">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.8)_0%,rgba(124,58,237,0.3)_100%)] group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
-              <div className="relative z-10">
-                <div className="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">50<span className="text-white/70">+</span></div>
-                <div className="text-xs md:text-sm text-white/90 uppercase tracking-[0.15em] font-bold">Happy Clients</div>
-              </div>
+
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-white/5 group-hover:bg-primary transition-colors duration-500 hidden sm:block" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">150<span className="text-primary">+</span></div>
+              <div className="text-sm text-white/50 uppercase tracking-[0.2em] font-bold">Projects</div>
             </div>
-            
-            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">30<span className="text-primary">%</span></div>
-              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">YoY Growth</div>
+
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-primary/50 group-hover:bg-primary transition-colors duration-500 hidden sm:block shadow-[0_0_10px_rgba(124,58,237,0.5)]" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter drop-shadow-[0_0_15px_rgba(124,58,237,0.4)]">110<span className="text-primary">+</span></div>
+              <div className="text-sm text-primary uppercase tracking-[0.2em] font-bold">Happy Clients</div>
             </div>
-            
-            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">50<span className="text-primary">+</span></div>
-              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold mb-3 group-hover:text-white/70 transition-colors">5-Star Reviews</div>
-              <div className="flex gap-1.5 text-primary drop-shadow-[0_0_5px_rgba(124,58,237,0.5)]">
+
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-white/5 group-hover:bg-primary transition-colors duration-500 hidden sm:block" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">30<span className="text-white/40">%</span></div>
+              <div className="text-sm text-white/50 uppercase tracking-[0.2em] font-bold">YoY Growth</div>
+            </div>
+
+            <div className="flex flex-col relative group">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-white/5 group-hover:bg-primary transition-colors duration-500 hidden sm:block" />
+              <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">50<span className="text-primary">+</span></div>
+              <div className="text-sm text-white/50 uppercase tracking-[0.2em] font-bold mb-3">5-Star Reviews</div>
+              <div className="flex gap-1 text-primary">
                 {[1,2,3,4,5].map(star => (
-                  <svg key={star} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 ))}
               </div>
             </div>
+
           </MotionDiv>
         </div>
       </section>
