@@ -6,8 +6,27 @@ import { MotionDiv, MotionH2, MotionP } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
 import Magnetic from "@/components/ui/Magnetic";
 
+const SERVICES = [
+  "Web Development",
+  "Mobile App Development",
+  "UI/UX Design",
+  "Cloud & DevOps",
+  "IT Consulting",
+  "Digital Marketing"
+];
+
+const INDUSTRIES = [
+  "FinTech & Banking",
+  "Healthcare & Telemed",
+  "E-Commerce & Retail",
+  "EdTech & eLearning",
+  "Real Estate & PropTech",
+  "Logistics & Supply Chain"
+];
+
 export default function ContactPage() {
   const [formState, setFormState] = useState({ name: "", company: "", email: "", phone: "", budget: "", message: "" });
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -16,12 +35,19 @@ export default function ContactPage() {
     setIsMounted(true);
   }, []);
 
+  const toggleService = (service: string) => {
+    setSelectedServices(prev => 
+      prev.includes(service) ? prev.filter(s => s !== service) : [...prev, service]
+    );
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
       setFormState({ name: "", company: "", email: "", phone: "", budget: "", message: "" });
+      setSelectedServices([]);
       alert("Message sent successfully!");
     }, 1500);
   };
@@ -35,7 +61,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-white pb-32">
       
-      {/* Massive Editorial Header */}
+      {/* Editorial Header */}
       <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto">
         <MotionDiv initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
           <h1 className="text-[clamp(3rem,8vw,8rem)] font-black tracking-tighter leading-[0.9] mb-8">
@@ -47,53 +73,92 @@ export default function ContactPage() {
         </MotionDiv>
       </section>
 
+      {/* Industries We Serve */}
+      <section className="px-6 max-w-7xl mx-auto mb-24">
+        <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h3 className="text-sm font-bold tracking-widest uppercase text-white/40 mb-6">Industries We Serve Globally</h3>
+          <div className="flex flex-wrap gap-3">
+            {INDUSTRIES.map((industry, i) => (
+              <div key={i} className="text-sm md:text-base font-medium text-white/80 border border-white/10 rounded-full px-4 py-2 hover:bg-white/5 transition-colors">
+                {industry}
+              </div>
+            ))}
+          </div>
+        </MotionDiv>
+      </section>
+
       <section className="px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
           {/* Left Column: Details (7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-24">
             
-            {/* Department Routing */}
+            {/* Global Operations */}
             <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h3 className="text-2xl font-bold tracking-tight mb-8">Direct Lines</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-8">Global Operations</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">New Business</h4>
-                  <a href="mailto:nexiogtechnologies@gmail.com" className="text-lg hover:text-[#e65100] transition-colors border-b border-white/10 hover:border-[#e65100] pb-1">nexiogtechnologies@gmail.com</a>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-[#e65100] mb-2">India HQ</h4>
+                  <p className="text-sm text-white/70 mb-2">Development & Operations Hub</p>
+                  <a href="mailto:nexiogtechnologies@gmail.com" className="text-lg hover:text-white transition-colors block mb-1 border-b border-white/10 w-fit pb-1">nexiogtechnologies@gmail.com</a>
+                  <a href="tel:+917980888810" className="text-lg hover:text-white transition-colors border-b border-white/10 w-fit pb-1">+91 79808 88810</a>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">General Inquiry</h4>
-                  <a href="mailto:nexiog@gmail.com" className="text-lg hover:text-[#e65100] transition-colors border-b border-white/10 hover:border-[#e65100] pb-1">nexiog@gmail.com</a>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">North America Desk</h4>
+                  <p className="text-sm text-white/70 mb-2">Client Relations & Strategy</p>
+                  <p className="text-lg text-white">9AM - 6PM EST</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Direct Phone / WhatsApp</h4>
-                  <a href="tel:+917980888810" className="text-lg hover:text-[#e65100] transition-colors border-b border-white/10 hover:border-[#e65100] pb-1">+91 79808 88810</a>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">EMEA Desk</h4>
+                  <p className="text-sm text-white/70 mb-2">European Partnerships</p>
+                  <p className="text-lg text-white">9AM - 6PM CET</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Global Support</h4>
-                  <p className="text-lg text-white/80">24/7 Dedicated Support</p>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">24/7 Support</h4>
+                  <p className="text-sm text-white/70 mb-2">Dedicated Client SLA Support</p>
+                  <p className="text-lg text-white">Always Online</p>
+                </div>
+              </div>
+            </MotionDiv>
+
+            {/* Testimonial */}
+            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative bg-[#050505] border border-white/10 p-8 rounded-2xl">
+              <div className="absolute top-4 left-6 text-6xl text-[#e65100]/20 font-serif leading-none">"</div>
+              <p className="text-lg md:text-xl font-light italic leading-relaxed text-white/90 relative z-10 mb-6">
+                NexiOG didn't just build our platform; they engineered a highly scalable ecosystem that completely transformed how we do business globally.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10" />
+                <div>
+                  <div className="text-sm font-bold">Enterprise Client</div>
+                  <div className="text-xs text-[#e65100]">Confidential Case Study</div>
                 </div>
               </div>
             </MotionDiv>
 
             {/* What Happens Next Timeline */}
             <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h3 className="text-2xl font-bold tracking-tight mb-8">What Happens Next?</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-8">The Process</h3>
               <div className="flex flex-col gap-8 relative border-l border-white/10 ml-3 pl-8">
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-[#e65100]" />
-                  <h4 className="text-xl font-bold mb-2">1. Discovery Call</h4>
+                  <h4 className="text-xl font-bold mb-2">1. Discovery Call (24hrs)</h4>
                   <p className="text-white/50 leading-relaxed">We schedule a 30-minute introductory call to understand your vision, requirements, and technical constraints.</p>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-white/20" />
-                  <h4 className="text-xl font-bold mb-2">2. Technical Audit & Strategy</h4>
-                  <p className="text-white/50 leading-relaxed">Our architects review your tech stack and propose a highly scalable infrastructure plan and project roadmap.</p>
+                  <h4 className="text-xl font-bold mb-2">2. Technical Audit</h4>
+                  <p className="text-white/50 leading-relaxed">Our architects review your tech stack and define the optimal infrastructure and frameworks.</p>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-white/20" />
-                  <h4 className="text-xl font-bold mb-2">3. Proposal & Kickoff</h4>
-                  <p className="text-white/50 leading-relaxed">You receive a detailed technical proposal with clear milestones. Once approved, development begins immediately.</p>
+                  <h4 className="text-xl font-bold mb-2">3. Proposal & Architecture</h4>
+                  <p className="text-white/50 leading-relaxed">You receive a detailed technical proposal mapping out timelines, milestones, and costs.</p>
+                </div>
+                <div className="relative">
+                  <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-2 border-white/20" />
+                  <h4 className="text-xl font-bold mb-2">4. Engineering Kickoff</h4>
+                  <p className="text-white/50 leading-relaxed">Once approved, our engineering pods deploy instantly and development begins with full transparency.</p>
                 </div>
               </div>
             </MotionDiv>
@@ -129,12 +194,33 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="sticky top-32"
             >
-              <h3 className="text-3xl font-extrabold mb-12 tracking-tight">Send a Message</h3>
+              <h3 className="text-3xl font-extrabold mb-8 tracking-tight">Send a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-10">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 
+                {/* Services Needed Grid */}
+                <div className="space-y-4 mb-6">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white/40 block">I am interested in...</label>
+                  <div className="flex flex-wrap gap-2">
+                    {SERVICES.map(service => (
+                      <button
+                        key={service}
+                        type="button"
+                        onClick={() => toggleService(service)}
+                        className={`px-3 py-1.5 rounded-full border text-sm transition-all duration-300 ${
+                          selectedServices.includes(service) 
+                            ? "border-[#e65100] bg-[#e65100]/10 text-white font-bold" 
+                            : "border-white/10 text-white/50 hover:border-white/30 hover:text-white"
+                        }`}
+                      >
+                        {service}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Floating Inputs Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="relative group">
                     <input 
                       type="text" 
@@ -160,7 +246,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="relative group">
                     <input 
                       type="email" 
