@@ -218,34 +218,45 @@ export default function AboutPage() {
             </p>
           </MotionDiv>
 
-          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {/* Stats Cards */}
-            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-black text-white mb-2">2011</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Established</div>
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+            {/* Modern Bento-style Stats Cards */}
+            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">2011</div>
+              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Established</div>
             </div>
-            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-black text-white mb-2">75+</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Team Member</div>
+            
+            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">75<span className="text-primary">+</span></div>
+              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Team Members</div>
             </div>
-            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-black text-white mb-2">1280</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">Completed Project</div>
+            
+            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">1280</div>
+              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Projects</div>
             </div>
-            <div className="bg-gradient-to-br from-primary to-secondary p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-2xl shadow-primary/20 transform md:scale-110 z-10">
-              <div className="text-4xl font-black text-white mb-2 drop-shadow-md">392</div>
-              <div className="text-sm text-white/90 uppercase tracking-wider font-bold drop-shadow-sm">Happy Client</div>
+            
+            {/* Highlighted Glowing Card */}
+            <div className="relative p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square overflow-hidden transform md:scale-110 z-10 group shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)] border border-primary/50">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.8)_0%,rgba(124,58,237,0.3)_100%)] group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+              <div className="relative z-10">
+                <div className="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">392</div>
+                <div className="text-xs md:text-sm text-white/90 uppercase tracking-[0.15em] font-bold">Happy Clients</div>
+              </div>
             </div>
-            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-black text-white mb-2">30% Plus</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider font-bold">YOY Revenue Growth</div>
+            
+            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">30<span className="text-primary">%</span></div>
+              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">YoY Growth</div>
             </div>
-            <div className="bg-[#0f0a1c] border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-black text-white mb-2">250+</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider font-bold mb-2">Five Star Reviews</div>
-              <div className="flex gap-2 text-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            
+            <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">250<span className="text-primary">+</span></div>
+              <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold mb-3 group-hover:text-white/70 transition-colors">5-Star Reviews</div>
+              <div className="flex gap-1.5 text-primary drop-shadow-[0_0_5px_rgba(124,58,237,0.5)]">
+                {[1,2,3,4,5].map(star => (
+                  <svg key={star} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                ))}
               </div>
             </div>
           </MotionDiv>
