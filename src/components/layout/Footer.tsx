@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 w-full border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           
           {/* Top Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 pt-24 pb-16 gap-16 border-b border-white/10">

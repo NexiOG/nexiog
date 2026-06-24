@@ -59,7 +59,7 @@ const FRAMER_IMAGES = [
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-16 lg:px-24 overflow-hidden bg-background">
+      <section className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center px-4 sm:px-6 overflow-hidden bg-background">
         <video 
           autoPlay 
           loop 
