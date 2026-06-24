@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MotionDiv, MotionH1, MotionP } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
 import WebGLBackground from "@/components/WebGLBackground";
+import Particles from "@/components/Particles";
 
 interface PageHeroProps {
   title: string;
@@ -27,8 +28,9 @@ export default function PageHero({
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center pt-32 md:pt-48 pb-20 md:pb-32 px-4 sm:px-6 min-h-[50vh] md:min-h-[60vh] overflow-hidden bg-[#050505] text-white border-b border-white/5">
-      {/* WebGL Fluid Background */}
+      {/* WebGL Fluid Background and Particles */}
       <WebGLBackground />
+      <Particles />
       
       {/* Subtle overlay for contrast */}
       <div className="absolute inset-0 bg-[#050505]/40 pointer-events-none z-0" />
