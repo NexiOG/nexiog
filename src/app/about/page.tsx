@@ -505,15 +505,13 @@ export default function AboutPage() {
                 <div className="text-[10px] tracking-[0.2em] text-white/50 uppercase font-bold mb-8 pl-10">
                   {member.role}
                 </div>
-                
-                <div className="text-white/70 text-sm leading-relaxed mb-6 pl-10">
-                  {member.description} 
-                  With extensive experience across the industry, {member.name.split(' ')[0]} has been instrumental in shaping NexiOG into a powerhouse of digital innovation and technical excellence.
+                <div className="flex flex-col gap-4 pl-10 mb-10">
+                  {member.paragraphs?.map((p, i) => (
+                    <div key={i} className="text-white/70 text-sm leading-relaxed">
+                      {p}
+                    </div>
+                  ))}
                 </div>
-                <div className="text-white/70 text-sm leading-relaxed mb-10 pl-10">
-                  {member.name.split(' ')[0]}'s philosophy centers on creating solutions that balance high-end aesthetics with uncompromising functionality to solve real-world problems.
-                </div>
-
                 <div className="flex gap-4 pl-10">
                   <a href="#" className="px-6 py-2 rounded-full border border-white/20 text-white/70 text-xs tracking-widest font-bold hover:bg-white/10 hover:text-white transition-colors">
                     LIN
