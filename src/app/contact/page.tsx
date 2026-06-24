@@ -73,71 +73,6 @@ export default function ContactPage() {
         </MotionDiv>
       </section>
 
-      {/* Others vs Us Comparison */}
-      <section className="py-20 px-6 relative max-w-7xl mx-auto mb-12">
-        <div className="text-center mb-16">
-          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
-            The Difference
-          </span>
-          <MotionH2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-extrabold tracking-tight"
-          >
-            Traditional Agencies <span className="text-white/40 italic font-light">vs</span> <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">NexiOG</span>
-          </MotionH2>
-        </div>
-
-        <MotionDiv 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-3xl overflow-hidden shadow-2xl"
-        >
-          {/* Traditional Agencies Column */}
-          <div className="bg-[#0a0514] p-8 md:p-12 flex flex-col gap-6">
-            <h3 className="text-xl font-bold text-white/50 mb-2">Traditional Agencies</h3>
-            <ul className="space-y-4">
-              {[
-                "Use bloated, pre-built templates",
-                "Hidden fees and unclear pricing",
-                "Slow, monolithic development cycles",
-                "Pass you off to junior developers",
-                "Outdated tech stacks (WordPress, jQuery)",
-                "Launch and abandon"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-white/50">
-                  <span className="text-red-500 font-bold text-lg mt-[-2px]">✕</span>
-                  <span className="text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* NexiOG Column */}
-          <div className="bg-gradient-to-br from-[#1a0b2e] to-[#0a0514] p-8 md:p-12 flex flex-col gap-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
-            <h3 className="text-xl font-bold text-white mb-2">NexiOG Technologies</h3>
-            <ul className="space-y-4">
-              {[
-                "Bespoke, engineered-from-scratch architectures",
-                "100% transparent pricing and milestones",
-                "Agile, rapid CI/CD deployment pipelines",
-                "Top 1% senior engineering talent",
-                "Modern stacks (Next.js, React, Node.js)",
-                "Dedicated 24/7 post-launch SLA support"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 text-white">
-                  <span className="text-primary font-bold text-lg mt-[-2px]">✓</span>
-                  <span className="text-base font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </MotionDiv>
-      </section>
-
       {/* Industries We Serve */}
       <section className="px-6 max-w-7xl mx-auto mb-24">
         <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -397,6 +332,71 @@ export default function ContactPage() {
           </div>
 
         </div>
+      </section>
+
+      {/* Others vs Us Comparison */}
+      <section className="py-20 px-6 relative max-w-7xl mx-auto mb-12">
+        <div className="text-center mb-16">
+          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
+            The Difference
+          </span>
+          <MotionH2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-extrabold tracking-tight"
+          >
+            Traditional Agencies <span className="text-white/40 italic font-light">vs</span> <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">NexiOG</span>
+          </MotionH2>
+        </div>
+
+        <MotionDiv 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-3xl overflow-hidden shadow-2xl"
+        >
+          {/* Traditional Agencies Column */}
+          <div className="bg-[#0a0514] p-8 md:p-12 flex flex-col gap-6">
+            <h3 className="text-xl font-bold text-white/50 mb-2">Traditional Agencies</h3>
+            <ul className="space-y-4">
+              {[
+                "Use bloated, pre-built templates",
+                "Hidden fees and unclear pricing",
+                "Slow, monolithic development cycles",
+                "Pass you off to junior developers",
+                "Outdated tech stacks (WordPress, jQuery)",
+                "Launch and abandon"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4 text-white/50">
+                  <span className="text-red-500 font-bold text-lg mt-[-2px]">✕</span>
+                  <span className="text-base">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* NexiOG Column */}
+          <div className="bg-gradient-to-br from-[#1a0b2e] to-[#0a0514] p-8 md:p-12 flex flex-col gap-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
+            <h3 className="text-xl font-bold text-white mb-2">NexiOG Technologies</h3>
+            <ul className="space-y-4">
+              {[
+                "Bespoke, engineered-from-scratch architectures",
+                "100% transparent pricing and milestones",
+                "Agile, rapid CI/CD deployment pipelines",
+                "Top 1% senior engineering talent",
+                "Modern stacks (Next.js, React, Node.js)",
+                "Dedicated 24/7 post-launch SLA support"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4 text-white">
+                  <span className="text-primary font-bold text-lg mt-[-2px]">✓</span>
+                  <span className="text-base font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </MotionDiv>
       </section>
     </div>
   );
