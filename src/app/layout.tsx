@@ -9,6 +9,7 @@ import Loader from "@/components/ui/Loader";
 import Chatbot from "@/components/Chatbot";
 import FloatingSocials from "@/components/FloatingSocials";
 import StarfieldBackground from "@/components/StarfieldBackground";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -102,6 +103,7 @@ export default function RootLayout({
           <Footer />
           <FloatingSocials />
           <Chatbot />
+          <CustomCursor />
         </TRPCProvider>
       </body>
     </html>

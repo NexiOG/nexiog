@@ -65,7 +65,7 @@ export default function PortfolioPage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative rounded-3xl overflow-hidden border border-white/10 bg-[#050505] shadow-xl"
             >
-              <Link href="#" className="block w-full h-[450px] relative">
+              <Link href={item.link} className="block w-full h-[450px] relative">
                 <Image 
                   src={item.image} 
                   alt={item.title}

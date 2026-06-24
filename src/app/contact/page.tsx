@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { PopupButton } from "react-calendly";
 import PageHero from "@/components/PageHero";
 import { MotionDiv, MotionH2 } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
@@ -9,6 +10,11 @@ import Magnetic from "@/components/ui/Magnetic";
 export default function ContactPage() {
   const [formState, setFormState] = useState({ name: "", email: "", phone: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,12 +139,23 @@ export default function ContactPage() {
                 />
               </div>
               
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 sm:items-center">
                 <Magnetic>
                   <button type="submit" disabled={isSubmitting} className={buttonVariants({ variant: "default", size: "lg", className: "w-full md:w-auto px-12" })}>
                     {isSubmitting ? "Sending..." : "Submit Request"}
                   </button>
                 </Magnetic>
+                <div className="hidden sm:block text-white/30 text-sm font-bold uppercase tracking-widest px-2">OR</div>
+                {isMounted && (
+                  <div className="w-full sm:w-auto">
+                    <PopupButton
+                      url="https://calendly.com/nexiog"
+                      rootElement={document.body}
+                      text="Book a Discovery Call"
+                      className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-white/20 bg-transparent hover:bg-white/10 text-white shadow-sm h-10 rounded-md px-12 w-full sm:w-auto"
+                    />
+                  </div>
+                )}
               </div>
             </form>
           </MotionDiv>
