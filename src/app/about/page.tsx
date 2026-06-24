@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
-  weight: ["700", "800", "900"],
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -506,8 +506,8 @@ export default function AboutPage() {
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                  <h3 className={`text-4xl md:text-5xl lg:text-6xl font-black text-[#e65100] tracking-tight ${poppins.className}`}>
-                    {member.name.split(' ')[0]} {member.name.split(' ')[1]?.[0]}.
+                  <h3 className={`text-4xl md:text-5xl lg:text-6xl font-normal text-[#e65100] tracking-tight ${poppins.className}`}>
+                    {member.name}
                   </h3>
                 </div>
                 <div className="text-[10px] tracking-[0.2em] text-white/50 uppercase font-bold mb-8 pl-10">
