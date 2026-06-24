@@ -29,7 +29,7 @@ export default function ContactPage() {
   const FAQS = [
     { q: "What is your typical project timeline?", a: "Most of our enterprise web and app projects take between 8 to 16 weeks, depending on complexity and integration requirements." },
     { q: "Do you accept formal RFPs?", a: "Yes, we actively participate in RFP processes for enterprise and government contracts. Send your RFP directly to nexiogtechnologies@gmail.com." },
-    { q: "What is your minimum engagement size?", a: "To ensure we deliver top-tier quality and dedicated resources, our minimum project engagement typically starts at $10k." },
+    { q: "What is your minimum engagement size?", a: "To ensure we deliver top-tier quality and dedicated resources, our minimum project engagement typically starts at ₹5 Lakhs." },
   ];
 
   return (
@@ -193,9 +193,9 @@ export default function ContactPage() {
                     className="w-full bg-transparent border-b-2 border-white/20 py-6 text-2xl md:text-3xl text-white focus:outline-none focus:border-[#e65100] transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="bg-[#050505] text-white/50">Select Budget Range</option>
-                    <option value="5k-10k" className="bg-[#050505] text-white">$5k - $10k</option>
-                    <option value="10k-50k" className="bg-[#050505] text-white">$10k - $50k</option>
-                    <option value="50k+" className="bg-[#050505] text-white">$50k+</option>
+                    <option value="1L-5L" className="bg-[#050505] text-white">₹1 Lakh - ₹5 Lakhs</option>
+                    <option value="5L-15L" className="bg-[#050505] text-white">₹5 Lakhs - ₹15 Lakhs</option>
+                    <option value="15L+" className="bg-[#050505] text-white">₹15 Lakhs+</option>
                   </select>
                   <label className="absolute left-0 -top-8 text-sm font-bold uppercase tracking-widest text-[#e65100]">Project Budget</label>
                   <div className="absolute right-0 top-6 pointer-events-none text-white/50">
