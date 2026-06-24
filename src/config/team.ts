@@ -3,7 +3,7 @@ export const TEAM = [
     id: "shounak",
     initials: "SB",
     name: "Shounak Bhattacharya",
-    role: "Co-Founder | Data Scientist & AI Engineer",
+    role: "Co-Founder | Data Scientist & AI Engineer | Web Developer",
     image: "https://framerusercontent.com/images/CDxS3e61UksiMm0oJGi80w7vEA5e73.jpg",
     paragraphs: [
       "Shounak Bhattacharya is a Data Scientist and AI Engineer with a strong foundation in building intelligent, data-driven systems that solve real-world business challenges at scale.",
