@@ -69,53 +69,12 @@ export default function ContactPage() {
         hideButtons={true}
       />
 
-      {/* Industries We Serve */}
-      <section className="px-6 max-w-7xl mx-auto mb-24">
-        <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h3 className="text-sm font-bold tracking-widest uppercase text-white/40 mb-6">Industries We Serve Globally</h3>
-          <div className="flex flex-wrap gap-3">
-            {INDUSTRIES.map((industry, i) => (
-              <div key={i} className="text-sm md:text-base font-medium text-white/80 border border-white/10 rounded-full px-4 py-2 hover:bg-white/5 transition-colors">
-                {industry}
-              </div>
-            ))}
-          </div>
-        </MotionDiv>
-      </section>
-
-      <section className="px-6 max-w-7xl mx-auto">
+      <section className="px-6 max-w-7xl mx-auto pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
           {/* Left Column: Details (7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-24">
-            
-            {/* Global Operations */}
-            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h3 className="text-2xl font-bold tracking-tight mb-8">Global Operations</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-2">India HQ</h4>
-                  <p className="text-sm text-white/70 mb-2">Development & Operations Hub</p>
-                  <a href="mailto:nexiogtechnologies@gmail.com" className="text-lg hover:text-white transition-colors block mb-1 border-b border-white/10 w-fit pb-1">nexiogtechnologies@gmail.com</a>
-                  <a href="tel:+917980888810" className="text-lg hover:text-white transition-colors border-b border-white/10 w-fit pb-1">+91 79808 88810</a>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">North America Desk</h4>
-                  <p className="text-sm text-white/70 mb-2">Client Relations & Strategy</p>
-                  <p className="text-lg text-white">9AM - 6PM EST</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">EMEA Desk</h4>
-                  <p className="text-sm text-white/70 mb-2">European Partnerships</p>
-                  <p className="text-lg text-white">9AM - 6PM CET</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">24/7 Support</h4>
-                  <p className="text-sm text-white/70 mb-2">Dedicated Client SLA Support</p>
-                  <p className="text-lg text-white">Always Online</p>
-                </div>
-              </div>
-            </MotionDiv>
+
 
             {/* Testimonial */}
             <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative p-8 md:p-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
@@ -337,6 +296,44 @@ export default function ContactPage() {
             </MotionDiv>
           </div>
 
+        </div>
+      </section>
+
+      {/* Industries We Serve Globally */}
+      <section className="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <MotionDiv initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
+              Our Reach
+            </span>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+              Industries We Serve <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Globally.</span>
+            </h3>
+            <p className="text-lg text-white/60 mb-10 leading-relaxed">
+              We leverage our extensive technical expertise to build secure, scalable, and innovative digital solutions tailored for diverse global industries.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {INDUSTRIES.map((industry, i) => (
+                <div key={i} className="flex items-center gap-3 text-sm md:text-base font-bold text-white bg-white/5 border border-white/10 rounded-xl px-5 py-3 hover:bg-white/10 hover:border-primary/50 transition-all duration-300">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  {industry}
+                </div>
+              ))}
+            </div>
+          </MotionDiv>
+          
+          <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[500px]">
+            <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl z-10">
+              <Image 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" 
+                alt="Global Industries" 
+                fill 
+                className="object-cover hover:scale-105 transition-transform duration-1000" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-[#0a0514]/40 to-transparent opacity-90" />
+            </div>
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
+          </MotionDiv>
         </div>
       </section>
 
