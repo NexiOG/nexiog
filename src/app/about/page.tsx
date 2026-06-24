@@ -38,7 +38,7 @@ export default function AboutPage() {
     <>
       <PageHero 
         title="About NexiOG" 
-        description="NexiOG Technologies, founded in 2011, is a software development company that provides cutting-edge technology and software solutions to global businesses. We have a solution for all your business needs, from IT consulting to design and development, quality assurance, and digital marketing."
+        description="NexiOG Technologies, founded in 2024, is a software development company that provides cutting-edge technology and software solutions to global businesses. We have a solution for all your business needs, from IT consulting to design and development, quality assurance, and digital marketing."
       />
 
       {/* Founders Message Section */}
@@ -50,7 +50,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-lg text-white/70 leading-relaxed mb-8">
               <p>
-                Our company, NexiOG Technologies, is an outcome of an entrepreneur's dream to become the world's most trusted provider of software solutions. Since 2011, we have worked tirelessly with our entire team of talented employees to keep NexiOG Technologies at the forefront of the software solutions industry.
+                Our company, NexiOG Technologies, is an outcome of an entrepreneur's dream to become the world's most trusted provider of software solutions. Since 2024, we have worked tirelessly with our entire team of talented employees to keep NexiOG Technologies at the forefront of the software solutions industry.
               </p>
               <p>
                 Our urge to build a large, rapidly growing company drives us. Besides, NexiOG Technologies is more than just impressive numbers; it is the accumulation of our ambition, creativity, and technical expertise. We believe that every business is driven by purpose and core values. Our ideas and mission are reflected not only in our work but also in our workplace culture.
@@ -89,14 +89,17 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-bold mb-4">
-              Established in 2011, NexiOG Technologies has been offering world-class information technology services
+              <p className="text-white/60 leading-relaxed max-w-3xl">
+                Established in 2024, NexiOG Technologies has been offering world-class information technology services
+                and solutions to clients worldwide.
+              </p>
             </MotionH2>
           </div>
 
           <div className="relative mt-20">
             {/* Minimalist Timeline Representation */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 relative z-10">
-              {[2011, 2013, 2015, 2017, 2020, "Present"].map((year, i) => (
+              {["Jan 2024", "Apr 2024", "Jul 2024", "Oct 2024", "Jan 2025", "Present"].map((year, i) => (
                 <div key={i} className="flex flex-col items-center group relative">
                   <div className="w-4 h-4 rounded-full bg-white/20 border-2 border-[#0a0514] z-10 group-hover:bg-primary transition-colors duration-300" />
                   <span className="mt-4 font-bold text-white/50 group-hover:text-white transition-colors duration-300">{year}</span>
@@ -107,7 +110,7 @@ export default function AboutPage() {
             </div>
 
             <MotionDiv initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 bg-[#110a1f] border border-white/10 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 text-[150px] font-black text-white/[0.03] leading-none select-none">2011</div>
+              <div className="absolute top-0 right-0 text-[150px] font-black text-white/[0.03] leading-none select-none">2024</div>
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">The Journey Begins</h3>
@@ -221,26 +224,25 @@ export default function AboutPage() {
           <MotionDiv initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {/* Modern Bento-style Stats Cards */}
             <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">2011</div>
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">2024</div>
               <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Established</div>
             </div>
             
             <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">75<span className="text-primary">+</span></div>
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">25</div>
               <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Team Members</div>
             </div>
             
             <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">1280</div>
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">100<span className="text-primary">+</span></div>
               <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors">Projects</div>
             </div>
             
-            {/* Highlighted Glowing Card */}
             <div className="relative p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square overflow-hidden transform md:scale-110 z-10 group shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)] border border-primary/50">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.8)_0%,rgba(124,58,237,0.3)_100%)] group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
               <div className="relative z-10">
-                <div className="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">392</div>
+                <div className="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">50<span className="text-white/70">+</span></div>
                 <div className="text-xs md:text-sm text-white/90 uppercase tracking-[0.15em] font-bold">Happy Clients</div>
               </div>
             </div>
@@ -251,7 +253,7 @@ export default function AboutPage() {
             </div>
             
             <div className="bg-white/[0.02] backdrop-blur-lg border border-white/10 p-6 rounded-3xl flex flex-col justify-center items-center text-center aspect-square shadow-xl hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">250<span className="text-primary">+</span></div>
+              <div className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">50<span className="text-primary">+</span></div>
               <div className="text-xs md:text-sm text-white/50 uppercase tracking-[0.15em] font-bold mb-3 group-hover:text-white/70 transition-colors">5-Star Reviews</div>
               <div className="flex gap-1.5 text-primary drop-shadow-[0_0_5px_rgba(124,58,237,0.5)]">
                 {[1,2,3,4,5].map(star => (
@@ -263,44 +265,74 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* How We Help Our Customers */}
+      {/* How We Help Our Customers - Realistic Zigzag Layout */}
       <section className="py-32 px-6 bg-[#050505] relative z-10">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            How We Help Our Customers
-          </MotionH2>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-24">
+            <MotionH2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
+              How We Help Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Customers</span>
+            </MotionH2>
+            <MotionP initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
+              We focus on building strong relationships and delivering measurable results through a proven, client-centric methodology.
+            </MotionP>
+          </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { title: "Communication", img: "/images/communication_card.png" },
-            { title: "Transparency", img: "/images/transparency_card.png" },
-            { title: "Focus On Results", img: "/images/results_card.png" },
-            { title: "Support", img: "/images/support_card.png" }
-          ].map((card, idx) => (
-            <MotionDiv 
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group relative h-[400px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
-            >
-              <Image 
-                src={card.img} 
-                alt={card.title} 
-                fill 
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-8">
-                <div className="w-10 h-10 mb-4 rounded-lg bg-primary/20 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-primary transition-colors">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+          <div className="space-y-32">
+            {[
+              {
+                title: "Communication",
+                desc: "We maintain open, transparent, and continuous communication channels throughout the entire project lifecycle, ensuring you are always informed and aligned with our progress.",
+                img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+                reversed: false,
+              },
+              {
+                title: "Transparency",
+                desc: "Our processes are fully transparent. You get full visibility into our workflows, timelines, and resource allocation, building a foundation of trust and accountability.",
+                img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80",
+                reversed: true,
+              },
+              {
+                title: "Focus On Results",
+                desc: "We don't just write code; we solve business problems. Our entire methodology is driven by your KPIs and business objectives to ensure maximum return on investment.",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                reversed: false,
+              },
+              {
+                title: "Support",
+                desc: "Our relationship doesn't end at launch. We provide comprehensive, long-term support and maintenance to ensure your platform remains secure, fast, and scalable as you grow.",
+                img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80",
+                reversed: true,
+              }
+            ].map((item, idx) => (
+              <div key={idx} className={`flex flex-col ${item.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
+                <MotionDiv 
+                  initial={{ opacity: 0, x: item.reversed ? 40 : -40 }} 
+                  whileInView={{ opacity: 1, x: 0 }} 
+                  viewport={{ once: true }}
+                  className="w-full lg:w-1/2"
+                >
+                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 group">
+                    <Image src={item.img} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+                  </div>
+                </MotionDiv>
+                <MotionDiv 
+                  initial={{ opacity: 0, x: item.reversed ? -40 : 40 }} 
+                  whileInView={{ opacity: 1, x: 0 }} 
+                  viewport={{ once: true }}
+                  className="w-full lg:w-1/2 space-y-6"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+                    <span className="text-xl font-black">0{idx + 1}</span>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">{item.title}</h3>
+                  <p className="text-lg text-white/60 leading-relaxed max-w-xl">
+                    {item.desc}
+                  </p>
+                </MotionDiv>
               </div>
-            </MotionDiv>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
