@@ -359,27 +359,95 @@ export default function AboutPage() {
             </MotionH2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Engineering Excellence", desc: "We don't just build websites. We engineer scalable, secure, and lightning-fast digital ecosystems.", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
-              { title: "Agile & Transparent", desc: "No black boxes. You get complete visibility into our sprint cycles, roadmaps, and daily code commits.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
-              { title: "Business-First Approach", desc: "Every line of code we write is tied to your business KPIs. If it doesn't drive revenue, we rethink it.", icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" },
-            ].map((value, i) => (
-              <MotionDiv 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-[#0a0514] border border-white/5 rounded-3xl p-10 shadow-2xl group hover:border-primary/30 transition-colors"
-              >
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={value.icon} /></svg>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{value.title}</h3>
-                <p className="text-white/60 leading-relaxed">{value.desc}</p>
-              </MotionDiv>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+            {/* Large Card (Span 2 col, Span 2 row) */}
+            <MotionDiv 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2 lg:row-span-2 rounded-3xl overflow-hidden relative group border border-white/10"
+            >
+              <Image src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Engineering" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Engineering Excellence</h3>
+                <p className="text-white/70 text-lg max-w-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                  We don't just build websites. We engineer scalable, secure, and lightning-fast digital ecosystems designed for long-term growth.
+                </p>
+              </div>
+            </MotionDiv>
+
+            {/* Top Right Card */}
+            <MotionDiv 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-3xl overflow-hidden relative group border border-white/10"
+            >
+              <Image src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Agile" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-black/40 to-transparent opacity-90" />
+              <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-2xl font-bold text-white mb-3">Agile & Transparent</h3>
+                <p className="text-white/60 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                  No black boxes. You get complete visibility into our sprint cycles, roadmaps, and daily code commits.
+                </p>
+              </div>
+            </MotionDiv>
+
+            {/* Middle Right Card */}
+            <MotionDiv 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-3xl overflow-hidden relative group border border-white/10 bg-[#0a0514]"
+            >
+              <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Business First" fill className="object-cover mix-blend-overlay opacity-30 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-2xl font-bold text-white mb-3">Business-First</h3>
+                <p className="text-white/60 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                  Every line of code we write is tied to your business KPIs. If it doesn't drive revenue, we rethink it.
+                </p>
+              </div>
+            </MotionDiv>
+
+            {/* Bottom Left Horizontal Card */}
+            <MotionDiv 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="md:col-span-2 lg:col-span-2 rounded-3xl overflow-hidden relative group border border-white/10"
+            >
+              <Image src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80" alt="Security" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0a0514] via-[#0a0514]/80 to-transparent opacity-90" />
+              <div className="absolute bottom-0 left-0 w-full md:w-2/3 p-8 md:p-10 flex flex-col justify-end h-full">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">Uncompromising Security</h3>
+                <p className="text-white/60 text-base">
+                  We adhere to the highest industry standards for data protection and infrastructure security, keeping your assets safe.
+                </p>
+              </div>
+            </MotionDiv>
+
+            {/* Bottom Right Card */}
+            <MotionDiv 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="rounded-3xl overflow-hidden relative group border border-white/10"
+            >
+              <Image src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Innovation" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-[#0a0514]/50 to-transparent opacity-90" />
+              <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-2xl font-bold text-white mb-3">Continuous Innovation</h3>
+                <p className="text-white/60 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                  Embracing emerging technologies to keep our clients ahead of the curve.
+                </p>
+              </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
