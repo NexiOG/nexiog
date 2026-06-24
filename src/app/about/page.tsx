@@ -452,57 +452,95 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Existing Team Section */}
-      <section className="py-32 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div className="text-center mb-20">
-          <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full mb-6 inline-block">
-            Our Experts
-          </span>
-          <MotionH2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[clamp(2.5rem,4vw,3.5rem)] font-extrabold tracking-tight"
-          >
-            Executive <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">Leadership</span>
-          </MotionH2>
+      {/* Message from the Co-Founders Section */}
+      <section className="py-32 px-6 relative border-t border-white/5 overflow-hidden bg-[#050505]">
+        {/* Decorative corner rings matching the reference image */}
+        <div className="absolute bottom-[-10%] right-[-5%] opacity-30 pointer-events-none hidden lg:block">
+          <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="120" stroke="currentColor" className="text-primary" strokeWidth="25" />
+            <circle cx="90" cy="90" r="40" stroke="currentColor" className="text-secondary" strokeWidth="15" />
+            <circle cx="320" cy="70" r="25" stroke="currentColor" className="text-primary" strokeWidth="8" />
+            <circle cx="280" cy="300" r="20" stroke="currentColor" className="text-secondary" strokeWidth="6" />
+          </svg>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {TEAM.map((member, index) => (
-            <MotionDiv 
-              key={member.id} 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group bg-[#050505] border border-white/10 rounded-3xl p-10 text-center hover:border-primary/50 transition-all duration-500 overflow-hidden relative shadow-2xl"
-            >
-              <div className="w-40 h-40 rounded-full mx-auto mb-8 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border-4 border-black ring-2 ring-white/10 overflow-hidden relative">
-                {member.image ? (
-                  <Image 
-                    src={member.image} 
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                ) : (
-                  <span className="text-4xl font-extrabold text-white">{member.initials}</span>
-                )}
-              </div>
-              
-              <h3 className="text-3xl font-bold mb-2 group-hover:text-white transition-colors">{member.name}</h3>
-              <div className="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-6">{member.role}</div>
-              <p className="text-muted-foreground text-[17px] leading-relaxed mb-8">{member.description}</p>
+        <div className="absolute top-[-10%] left-[-10%] opacity-20 pointer-events-none hidden lg:block">
+          <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="150" r="140" stroke="currentColor" className="text-secondary" strokeWidth="8" />
+          </svg>
+        </div>
 
-              {/* Social Links */}
-              <div className="flex justify-center gap-4">
-                <a href="#" className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/50 hover:text-white hover:bg-primary hover:border-primary transition-all">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-              </div>
-            </MotionDiv>
-          ))}
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row justify-between items-start mb-24 relative">
+            {/* Dots top left */}
+            <div className="absolute -left-12 top-2 opacity-50 hidden md:flex gap-2 flex-wrap w-10">
+              {[...Array(6)].map((_, i) => <div key={i} className="w-2 h-2 rounded-full bg-white/60" />)}
+            </div>
+
+            <div>
+              <MotionH2 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-2"
+              >
+                Message from the Co-Founders
+              </MotionH2>
+              <MotionP 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-white/40 uppercase tracking-[0.2em] text-sm font-bold"
+              >
+                Vision & Leadership
+              </MotionP>
+            </div>
+
+            {/* Dots top right */}
+            <div className="absolute -right-12 top-2 opacity-50 hidden md:flex gap-2 flex-wrap w-10">
+              {[...Array(6)].map((_, i) => <div key={i} className="w-2 h-2 rounded-full bg-white/60" />)}
+            </div>
+          </div>
+          
+          {/* Co-Founders List */}
+          <div className="flex flex-col gap-28">
+            {TEAM.map((member, index) => (
+              <MotionDiv 
+                key={member.id} 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 group"
+              >
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 shrink-0 rounded-full relative overflow-hidden border-8 border-[#111] shadow-[0_0_50px_rgba(124,58,237,0.15)] group-hover:border-primary/20 transition-all duration-500">
+                  <div className="w-full h-full rounded-full overflow-hidden relative bg-[#1a1a1a]">
+                    {member.image ? (
+                      <Image 
+                        src={member.image} 
+                        alt={member.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-5xl font-bold text-white/50">
+                        {member.initials}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-3xl md:text-5xl font-black text-white mb-2 uppercase tracking-tight">{member.name}</h3>
+                  <div className="text-primary font-black uppercase tracking-widest text-sm md:text-lg mb-6">{member.role}</div>
+                  <p className="text-white/60 text-lg md:text-xl leading-relaxed md:pr-12">
+                    "{member.description} This represents our commitment to driving continuous innovation and unparalleled value for our partners across the globe. By staying ahead of the technological curve, we aim to ensure the utmost success in everything we engineer."
+                  </p>
+                </div>
+              </MotionDiv>
+            ))}
+          </div>
         </div>
       </section>
     </>
