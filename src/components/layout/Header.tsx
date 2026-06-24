@@ -38,12 +38,12 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] pointer-events-none flex justify-center">
+    <header className="fixed top-4 left-0 w-full z-[100] pointer-events-none flex justify-center px-4">
       <div 
-        className={`pointer-events-auto flex justify-between items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] w-full rounded-none px-6 md:px-8 ${
+        className={`pointer-events-auto flex justify-between items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] w-full max-w-7xl rounded-full px-6 md:px-8 ${
           isScrolled 
-            ? "py-4 bg-transparent backdrop-blur-md border-b border-white/5" 
-            : "py-6 bg-transparent border-transparent"
+            ? "py-3 bg-transparent backdrop-blur-md border border-white/10 shadow-lg" 
+            : "py-4 bg-transparent border border-transparent"
         }`}
       >
         {/* Logo Section */}
@@ -56,6 +56,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-12">
           <ul className="flex space-x-10 items-center">
             <li className="py-2"><Link href="/" className="text-sm font-medium text-white/90 hover:text-white transition-colors">Home</Link></li>
+            <li className="py-2"><Link href="/about" className="text-sm font-medium text-white/90 hover:text-white transition-colors">About</Link></li>
             
             {/* Services Dropdown */}
             <li className="relative group">
@@ -72,7 +73,6 @@ export default function Header() {
             </li>
             
             <li className="py-2"><Link href="/portfolio" className="text-sm font-medium text-white/90 hover:text-white transition-colors">Portfolio</Link></li>
-            <li className="py-2"><Link href="/about" className="text-sm font-medium text-white/90 hover:text-white transition-colors">About</Link></li>
             <li className="py-2"><Link href="/blog" className="text-sm font-medium text-white/90 hover:text-white transition-colors">Blog</Link></li>
             <li className="py-2"><Link href="/contact" className="text-sm font-medium text-white/90 hover:text-white transition-colors">Contact</Link></li>
           </ul>
@@ -108,9 +108,9 @@ export default function Header() {
           >
             <nav className="flex flex-col gap-6 items-center text-center mt-10">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">Home</Link>
+              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">About</Link>
               <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">Services</Link>
               <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">Portfolio</Link>
-              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">About</Link>
               <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">Blog</Link>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white/90 hover:text-primary transition-colors">Contact</Link>
               
