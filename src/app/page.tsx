@@ -8,6 +8,7 @@ import { MotionDiv, MotionH1, MotionH2, MotionP } from "@/components/Motion";
 import { SectionDivider } from "@/components/section-divider";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
+import HeroAnimatedBackground from "@/components/ui/HeroAnimatedBackground";
 import { buttonVariants } from "@/components/ui/button";
 
 const TECH_STACK = [
@@ -60,16 +61,7 @@ export default function Home() {
   return (
     <>
       <section className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center px-4 sm:px-6 overflow-hidden bg-background">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
-          style={{ WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)" }}
-        >
-          <source src="/video/background%203d.mp4" type="video/mp4" />
-        </video>
+        <HeroAnimatedBackground />
 
         <div className="w-full max-w-7xl mx-auto relative z-10 pointer-events-none mt-6 md:mt-0">
           <div className="max-w-4xl mx-auto mt-2 md:mt-4 pointer-events-none text-center">
