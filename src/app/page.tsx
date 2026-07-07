@@ -77,7 +77,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold leading-tight md:leading-[1.08] mb-4 md:mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)] px-2"
+              className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold leading-[1.1] md:leading-[1.08] mb-4 md:mb-6 tracking-tighter text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-b md:from-white md:via-white/90 md:to-[#a855f7] drop-shadow-xl md:drop-shadow-[0_0_40px_rgba(124,58,237,0.3)] px-2"
             >
               We Engineer the Tech. <span className="block mt-2 md:mt-0">You Capture the Market</span>
             </MotionH1>
@@ -117,7 +117,7 @@ export default function Home() {
 
         {/* Tech Stack Banner inside Hero */}
         <div className="absolute bottom-0 left-0 w-full bg-transparent py-3 md:py-6 overflow-hidden flex whitespace-nowrap z-20">
-          <div className="flex animate-[scroll_60s_linear_infinite] md:animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
+          <div className="flex animate-[scroll_120s_linear_infinite] md:animate-[scroll_90s_linear_infinite] items-center w-max hover:[animation-play-state:paused]">
             {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
               <div key={i} className="flex flex-shrink-0 items-center justify-center h-9 md:h-12 px-3 md:px-5 rounded-full bg-white/5 border border-white/10 group transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] cursor-default mx-1.5 md:mx-3 gap-2 md:gap-3">
                 {tech.src && (
@@ -663,7 +663,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 w-full max-w-xl bg-gradient-to-br from-[#180d2b]/80 to-[#11091e]/90 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-[2rem] p-6 md:p-12 shadow-[0_0_80px_rgba(129,74,200,0.15)] lg:mr-[5%]"
+            className="relative z-10 w-full max-w-xl bg-gradient-to-br from-[#180d2b]/95 to-[#11091e]/95 lg:from-[#180d2b]/80 lg:to-[#11091e]/90 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-[2rem] p-6 md:p-12 shadow-[0_0_80px_rgba(129,74,200,0.15)] lg:mr-[5%]"
           >
             <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               Our core features are designed to deliver high-performance, scalable web solutions that help your business succeed online.

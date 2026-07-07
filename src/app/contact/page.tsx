@@ -161,7 +161,7 @@ export default function ContactPage() {
             >
               <h3 className="text-3xl font-extrabold mb-8 tracking-tight">Send a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-10 md:space-y-8">
                 
                 {/* Services Needed Grid */}
                 <div className="space-y-4 mb-6">
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Floating Inputs Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
                   <div className="relative group">
                     <input 
                       type="text" 
@@ -211,7 +211,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
                   <div className="relative group">
                     <input 
                       type="email" 
