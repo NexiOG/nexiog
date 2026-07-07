@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function HeroAnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -104,9 +105,8 @@ export default function HeroAnimatedBackground() {
     };
 
     const render = (t: number) => {
-      // Draw deep space background
-      ctx.fillStyle = '#05020a';
-      ctx.fillRect(0, 0, width, height);
+      // Clear canvas (transparent background so image shows through)
+      ctx.clearRect(0, 0, width, height);
 
       const projected: any[] = [];
 
@@ -171,9 +171,23 @@ export default function HeroAnimatedBackground() {
         maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)" 
       }}
     >
+      {/* High-res technical background image */}
+      <Image 
+        src="/images/tech-hero-bg.png" 
+        alt="Technical Circuit Background" 
+        fill 
+        priority
+        className="object-cover opacity-60"
+        sizes="100vw"
+      />
+      
+      {/* Overlay gradient to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#05020a] via-[#05020a]/40 to-transparent z-[1]" />
+
+      {/* 3D Canvas layer (transparent, sits on top) */}
       <canvas
         ref={canvasRef}
-        className="w-full h-full block"
+        className="absolute inset-0 w-full h-full block z-[2]"
       />
     </div>
   );
