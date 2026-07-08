@@ -1,137 +1,160 @@
+"use client";
+
 import PageHero from "@/components/PageHero";
 import { MotionDiv } from "@/components/Motion";
-import Image from "next/image";
 import Link from "next/link";
-import { Target, TrendingUp, Search, Mail, BarChart, Users, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Target, TrendingUp, Search, Mail, BarChart, Users, ArrowRight, CheckCircle2, ChevronDown, Activity, PieChart } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { useState } from "react";
+
+const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border border-white/10 rounded-2xl bg-[#0a0515] overflow-hidden transition-all duration-300">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+        <h4 className="text-lg font-semibold text-white">{question}</h4>
+        <ChevronDown className={`w-5 h-5 text-[#a855f7] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      <div className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
+        <p className="text-muted-foreground">{answer}</p>
+      </div>
+    </div>
+  );
+};
 
 export default function DigitalMarketingPage() {
   return (
     <>
       <PageHero 
-        title="Data-Driven Digital Marketing" 
+        title="Performance Growth Marketing" 
         description="Explosive growth strategies combining SEO, targeted ads, and conversion optimization to dominate your market." 
         primaryCtaText="Get a Free Audit" 
         primaryCtaLink="/contact" 
         hideButtons={false}
       />
 
-      {/* 2. Overview Section */}
-      <section className="py-24 px-6 relative z-10 bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <MotionDiv 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="relative h-[400px] lg:h-[500px] w-full rounded-3xl overflow-hidden border border-white/10"
-          >
-            <Image 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-              alt="Digital Marketing" 
-              fill 
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#a855f7]/20 to-transparent mix-blend-overlay" />
-          </MotionDiv>
-          
-          <MotionDiv 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              Stop Guessing. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-[#a855f7]">Start Converting.</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              A great product means nothing if nobody knows it exists. Our performance marketing team uses data science, compelling creative, and algorithmic bidding strategies to acquire high-value customers at the lowest possible CPA (Cost Per Acquisition).
-            </p>
-            <ul className="space-y-4 mb-8">
-              {[
-                "Technical and On-Page SEO optimization",
-                "High-ROAS Google and Meta advertising campaigns",
-                "Automated email marketing sequences",
-                "Advanced tracking and conversion rate optimization (CRO)"
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3 text-white/90">
-                  <CheckCircle2 className="w-5 h-5 text-[#a855f7]" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </MotionDiv>
+      {/* 2. Why Choose Us - Data Dashboard Layout */}
+      <section className="py-24 px-6 relative z-10 bg-[#05020a] overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <div className="lg:col-span-5">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Why Our Campaigns Win.</h2>
+              <p className="text-muted-foreground text-lg mb-8">
+                We do not guess. Every dollar spent is meticulously tracked and optimized through advanced algorithmic bidding and data science. We focus entirely on one metric: Return on Ad Spend (ROAS).
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-white/90"><CheckCircle2 className="w-5 h-5 text-[#a855f7]" /> Multi-touch attribution modeling</li>
+                <li className="flex items-center gap-3 text-white/90"><CheckCircle2 className="w-5 h-5 text-[#a855f7]" /> AI-driven audience segmentation</li>
+                <li className="flex items-center gap-3 text-white/90"><CheckCircle2 className="w-5 h-5 text-[#a855f7]" /> Split testing (A/B/n) on all creatives</li>
+              </ul>
+            </div>
+
+            {/* Dashboard Visualizer */}
+            <div className="lg:col-span-7">
+              <MotionDiv initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-[#11081f] border border-white/10 rounded-3xl p-6 shadow-2xl relative">
+                {/* Simulated Dashboard Header */}
+                <div className="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
+                  <div className="flex items-center gap-2"><Activity className="w-5 h-5 text-[#a855f7]" /><span className="text-white font-semibold">Live Campaign Data</span></div>
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                  <div className="bg-[#05020a] p-4 rounded-2xl border border-white/5">
+                    <p className="text-muted-foreground text-xs uppercase mb-1">Total Revenue</p>
+                    <p className="text-2xl font-bold text-white">$142,500</p>
+                    <p className="text-green-400 text-xs mt-2">+24.5% MoM</p>
+                  </div>
+                  <div className="bg-[#05020a] p-4 rounded-2xl border border-white/5">
+                    <p className="text-muted-foreground text-xs uppercase mb-1">ROAS</p>
+                    <p className="text-2xl font-bold text-white">4.8x</p>
+                    <p className="text-green-400 text-xs mt-2">Target: 3.0x</p>
+                  </div>
+                  <div className="bg-[#05020a] p-4 rounded-2xl border border-white/5">
+                    <p className="text-muted-foreground text-xs uppercase mb-1">Cost Per Acq (CPA)</p>
+                    <p className="text-2xl font-bold text-white">$12.40</p>
+                    <p className="text-green-400 text-xs mt-2">-15% MoM</p>
+                  </div>
+                </div>
+
+                {/* Simulated Graph */}
+                <div className="h-40 w-full bg-[#05020a] rounded-2xl border border-white/5 relative overflow-hidden flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#a855f7]/20 to-transparent opacity-50" />
+                  {/* Fake bars */}
+                  {[40, 55, 45, 70, 65, 80, 95, 100].map((h, i) => (
+                    <div key={i} className="flex-1 mx-1 bg-[#a855f7]" style={{ height: `${h}%`, borderTopLeftRadius: '4px', borderTopRightRadius: '4px' }} />
+                  ))}
+                </div>
+              </MotionDiv>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 3. Core Features Grid */}
-      <section className="py-24 px-6 relative z-10 bg-[#05020a]">
+      {/* 3. The Omnichannel Grid */}
+      <section className="py-24 px-6 relative z-10 bg-background border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Growth Channels</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Omnichannel strategies designed for exponential ROI.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: Search, title: "Search Engine Optimization", desc: "Climb to the top of Google with technical SEO, high-authority link building, and targeted content." },
-              { icon: Target, title: "Pay-Per-Click Ads", desc: "Hyper-targeted campaigns on Google Search and Display networks that capture high-intent buyers." },
-              { icon: Users, title: "Social Media Advertising", desc: "Thumb-stopping creative and sophisticated retargeting funnels on Meta, LinkedIn, and TikTok." },
-              { icon: Mail, title: "Email Automation", desc: "Segmented email flows that nurture leads, recover abandoned carts, and boost customer LTV." },
-              { icon: TrendingUp, title: "Conversion Optimization", desc: "A/B testing landing pages and funnels to maximize the revenue generated from your existing traffic." },
-              { icon: BarChart, title: "Advanced Analytics", desc: "Custom Looker Studio dashboards giving you real-time visibility into every marketing dollar spent." },
-            ].map((feature, idx) => (
-              <MotionDiv 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#0a0515] p-8 rounded-3xl border border-white/5 hover:-translate-y-2 hover:border-[#a855f7]/50 transition-all duration-300 hover:shadow-[0_10px_40px_rgba(168,85,247,0.15)] group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#a855f7]/20 transition-colors">
-                  <feature.icon className="w-7 h-7 text-[#a855f7]" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-              </MotionDiv>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#11081f] p-8 rounded-3xl border border-white/5 hover:border-[#a855f7]/40 transition-all flex flex-col justify-center">
+              <Target className="w-10 h-10 text-[#a855f7] mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-3">Paid Acquisition</h3>
+              <p className="text-muted-foreground mb-4">Aggressive, hyper-targeted campaigns across Google Search, Meta (Facebook/Instagram), and LinkedIn.</p>
+              <div className="flex gap-2">
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">Google Ads</span>
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">Meta Ads</span>
+              </div>
+            </MotionDiv>
+
+            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#11081f] p-8 rounded-3xl border border-white/5 hover:border-[#a855f7]/40 transition-all flex flex-col justify-center">
+              <Search className="w-10 h-10 text-[#a855f7] mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-3">Technical SEO</h3>
+              <p className="text-muted-foreground mb-4">Dominating organic search results through deep technical audits, content clusters, and high-authority backlinks.</p>
+              <div className="flex gap-2">
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">On-Page</span>
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">Off-Page</span>
+              </div>
+            </MotionDiv>
+
+            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-[#11081f] p-8 rounded-3xl border border-white/5 hover:border-[#a855f7]/40 transition-all flex flex-col justify-center">
+              <TrendingUp className="w-10 h-10 text-[#a855f7] mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-3">CRO</h3>
+              <p className="text-muted-foreground mb-4">Conversion Rate Optimization using heatmaps and A/B split testing to squeeze maximum revenue from existing traffic.</p>
+              <div className="flex gap-2">
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">A/B Testing</span>
+                <span className="text-xs font-mono bg-[#a855f7]/20 text-[#a855f7] px-2 py-1 rounded">Heatmaps</span>
+              </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
-      {/* 4. Workflow / Process */}
-      <section className="py-24 px-6 relative z-10 bg-background">
-        <div className="max-w-7xl mx-auto">
+      {/* 4. FAQ Section */}
+      <section className="py-24 px-6 relative z-10 bg-[#05020a]">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Growth Framework</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">A scientific approach to scaling your revenue.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Marketing FAQs</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-[#a855f7]/30 to-transparent z-0" />
-            
-            {[
-              { num: "01", title: "Audit", desc: "Deep diving into your current analytics, ad accounts, and competitor landscape." },
-              { num: "02", title: "Strategy", desc: "Building a custom, multi-channel media plan and projecting target ROI." },
-              { num: "03", title: "Execution", desc: "Creating ads, building landing pages, and launching campaigns across all networks." },
-              { num: "04", title: "Scale", desc: "Relentless A/B testing and algorithmic budget scaling for winning campaigns." },
-            ].map((step, idx) => (
-              <MotionDiv 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="relative z-10 flex flex-col items-center text-center px-4"
-              >
-                <div className="w-24 h-24 rounded-full bg-[#05020a] border-2 border-[#a855f7]/30 flex items-center justify-center text-3xl font-black text-[#a855f7] mb-6 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
-                  {step.num}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">{step.desc}</p>
-              </MotionDiv>
-            ))}
+          <div className="space-y-4">
+            <FAQItem 
+              question="How long does it take to see SEO results?" 
+              answer="SEO is a long-term compound investment. Depending on the competitiveness of your industry, you can expect to see initial movement in 3 months, and significant, highly profitable organic traffic scaling up between months 6 to 12."
+            />
+            <FAQItem 
+              question="What is a good ad budget to start with?" 
+              answer="For algorithmic bidding platforms like Google and Meta to properly exit the 'learning phase', we recommend a minimum ad spend of $3,000 to $5,000 per month. This allows the AI enough data to find your most profitable audience."
+            />
+            <FAQItem 
+              question="Will I receive marketing reports?" 
+              answer="Absolutely. We build real-time custom Looker Studio dashboards for you. You will have 24/7 transparent access to every metric, click, and dollar spent, along with scheduled strategy calls."
+            />
           </div>
         </div>
       </section>
@@ -139,16 +162,13 @@ export default function DigitalMarketingPage() {
       {/* 5. CTA Section */}
       <section className="py-24 px-6 relative z-10">
         <MotionDiv 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
           className="max-w-5xl mx-auto bg-gradient-to-br from-[#1a0b2e] to-[#05020a] rounded-[3rem] p-12 md:p-20 text-center border border-[#a855f7]/20 relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[url('/images/tech-hero-bg.png')] opacity-10 mix-blend-overlay object-cover" />
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Ready to scale?</h2>
-            <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Let our growth team analyze your current marketing stack and show you exactly where you're leaving money on the table.</p>
-            <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "h-14 px-8 text-lg group" })}>
+            <Link href="/contact" className={buttonVariants({ variant: "default", size: "lg", className: "h-14 px-8 text-lg group mt-8" })}>
               Request Marketing Audit 
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
